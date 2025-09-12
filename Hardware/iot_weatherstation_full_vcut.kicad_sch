@@ -1,0 +1,2023 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "cdbed8bd-c396-4548-8c14-ae5beaf6f207")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Connector:Conn_01x01_Socket"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01_Socket"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x01_Socket_1_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0.508)
+					(mid -0.5058 0)
+					(end 0 -0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 148.59 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1346b24a-49cd-4e61-ae94-af1e67513e89")
+	)
+	(junction
+		(at 146.05 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a33d262-18b9-4891-89e4-d673fe8b95d3")
+	)
+	(junction
+		(at 146.05 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "58dc5f74-c485-49ae-a0bb-5d6af1432bda")
+	)
+	(junction
+		(at 148.59 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "799e1576-77a1-4127-b436-beed789ab069")
+	)
+	(junction
+		(at 146.05 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c373290c-882f-4b34-84bd-a694c17f5f08")
+	)
+	(junction
+		(at 148.59 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfee76d7-baff-4c16-9804-c43ee9e2db5a")
+	)
+	(no_connect
+		(at 196.215 86.995)
+		(uuid "134d4547-755c-4c07-a8ac-21c4af713851")
+	)
+	(no_connect
+		(at 196.215 108.585)
+		(uuid "2ee80e49-79b1-4a9c-a55f-5546b297f5d8")
+	)
+	(no_connect
+		(at 196.215 90.17)
+		(uuid "353d50b3-d7c3-4c68-97cc-124751ead0b7")
+	)
+	(no_connect
+		(at 196.215 105.41)
+		(uuid "6fb66853-5651-44f4-b642-02c9ca1f26ed")
+	)
+	(no_connect
+		(at 196.215 80.645)
+		(uuid "76c8256d-b41e-49c1-a674-ff5bb1ed9e97")
+	)
+	(no_connect
+		(at 196.215 83.82)
+		(uuid "c3bbd8cb-b303-4272-bc95-ee50526bad30")
+	)
+	(no_connect
+		(at 196.215 102.235)
+		(uuid "c5224c2e-8872-41e6-8729-db92917caafa")
+	)
+	(wire
+		(pts
+			(xy 107.315 100.965) (xy 116.205 100.965)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03ff36f0-dacb-4480-aa76-83233cb30027")
+	)
+	(wire
+		(pts
+			(xy 107.315 81.28) (xy 116.205 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d7a3a40-7714-45e4-a965-cbb0c795d031")
+	)
+	(wire
+		(pts
+			(xy 196.215 108.585) (xy 197.485 108.585)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1774d00c-16ec-4066-a318-32e75e5f9c8b")
+	)
+	(wire
+		(pts
+			(xy 196.215 102.235) (xy 197.485 102.235)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20d6f15b-563f-4ae6-b040-d2166ed3b0d1")
+	)
+	(wire
+		(pts
+			(xy 148.59 109.22) (xy 148.59 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21e966ee-daed-4eb8-83c5-4583af7b7e26")
+	)
+	(wire
+		(pts
+			(xy 107.315 106.045) (xy 116.205 106.045)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24bbce76-c1c2-4241-9270-60e416ac49b0")
+	)
+	(wire
+		(pts
+			(xy 154.305 96.52) (xy 146.05 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b5f2509-e95c-4b1a-8874-03b3b1404132")
+	)
+	(wire
+		(pts
+			(xy 107.315 137.795) (xy 116.205 137.795)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ea97c89-0dd2-40d2-9d3e-3e3e9eee3fd8")
+	)
+	(wire
+		(pts
+			(xy 154.305 109.22) (xy 148.59 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3246a4f5-b55c-4050-a7a0-81da6b55c560")
+	)
+	(wire
+		(pts
+			(xy 107.315 95.885) (xy 116.205 95.885)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "327aed0a-4254-4140-9cc5-5ce6641c3083")
+	)
+	(wire
+		(pts
+			(xy 146.05 111.76) (xy 146.05 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33de21a5-ad9b-4c52-8cef-4b3991314af3")
+	)
+	(wire
+		(pts
+			(xy 107.315 143.51) (xy 116.205 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35f2bd05-3c15-4a3c-a5e5-608effa24d2b")
+	)
+	(wire
+		(pts
+			(xy 107.315 77.47) (xy 116.205 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "383c7eb0-4fd2-40e9-91df-e18c10b9d5dd")
+	)
+	(wire
+		(pts
+			(xy 107.315 135.255) (xy 116.205 135.255)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41e39b2e-c7b5-4a48-9a03-b694074ad3f0")
+	)
+	(wire
+		(pts
+			(xy 107.315 116.84) (xy 116.205 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46567aea-706a-4b6f-bab3-372879210797")
+	)
+	(wire
+		(pts
+			(xy 154.305 93.98) (xy 148.59 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bee966b-6a72-4035-b455-4e419dd49477")
+	)
+	(wire
+		(pts
+			(xy 107.315 98.425) (xy 116.205 98.425)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53734f2f-9bb2-49db-99d7-224b109fafdb")
+	)
+	(wire
+		(pts
+			(xy 107.315 83.82) (xy 116.205 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e9d1132-78c2-4ff0-88dc-8495f40dfba0")
+	)
+	(wire
+		(pts
+			(xy 107.315 109.22) (xy 116.205 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6024b56e-a6c5-447c-aa6b-09e74f4eb8c3")
+	)
+	(wire
+		(pts
+			(xy 139.7 77.47) (xy 148.59 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60fe2cae-164d-432d-a446-a1edad7faa5a")
+	)
+	(wire
+		(pts
+			(xy 107.315 111.76) (xy 116.205 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61e5b9fb-b969-45f0-ad52-28813b552dc6")
+	)
+	(wire
+		(pts
+			(xy 196.215 105.41) (xy 197.485 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "667fa6f0-4416-4ecc-989f-3bf8f403dad0")
+	)
+	(wire
+		(pts
+			(xy 196.215 80.645) (xy 197.485 80.645)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6710d953-9392-47b0-9008-76b7d17d7fac")
+	)
+	(wire
+		(pts
+			(xy 146.05 96.52) (xy 146.05 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bad7a4b-d758-4b10-a311-ba94839250ed")
+	)
+	(wire
+		(pts
+			(xy 146.05 80.01) (xy 154.305 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71c01772-8506-4b72-af00-556baf1b0409")
+	)
+	(wire
+		(pts
+			(xy 107.315 132.715) (xy 116.205 132.715)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75dfd543-baeb-4a45-9c36-73802ecfa700")
+	)
+	(wire
+		(pts
+			(xy 148.59 77.47) (xy 154.305 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "779c911a-8778-4e20-81a1-e3ab158a9513")
+	)
+	(wire
+		(pts
+			(xy 154.305 125.095) (xy 148.59 125.095)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79419d73-141b-4e56-9e00-7c7b368ed894")
+	)
+	(wire
+		(pts
+			(xy 154.305 127.635) (xy 146.05 127.635)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80ffb16d-231d-4e8d-becf-4e1e138eaf0b")
+	)
+	(wire
+		(pts
+			(xy 107.315 119.38) (xy 116.205 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a849e1b-455c-4192-b4d5-c1ee7a1182a4")
+	)
+	(wire
+		(pts
+			(xy 139.7 80.01) (xy 146.05 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91df6487-2886-4942-bf62-07eaddcb1dd4")
+	)
+	(wire
+		(pts
+			(xy 107.315 140.335) (xy 116.205 140.335)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95721d1d-db0d-4ada-82e4-fab99ebcbcad")
+	)
+	(wire
+		(pts
+			(xy 196.215 90.17) (xy 197.485 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96e32398-0ed5-4f18-8001-f69013e33f0b")
+	)
+	(wire
+		(pts
+			(xy 107.315 122.555) (xy 116.205 122.555)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ae96335-4274-4b75-acc7-428f53fbd2a0")
+	)
+	(wire
+		(pts
+			(xy 154.305 111.76) (xy 146.05 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a268e450-da28-417f-a636-f2b6844071f0")
+	)
+	(wire
+		(pts
+			(xy 148.59 125.095) (xy 148.59 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a585b8a1-4caf-4f87-b397-7895428eb22c")
+	)
+	(wire
+		(pts
+			(xy 196.215 86.995) (xy 197.485 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaadd4d8-aa1f-4f66-81ad-4304d0a82a29")
+	)
+	(wire
+		(pts
+			(xy 107.315 127.635) (xy 116.205 127.635)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3cd37fd-d1da-4757-bd4f-e612b287ef91")
+	)
+	(wire
+		(pts
+			(xy 107.315 125.095) (xy 116.205 125.095)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd3c68e1-68b7-4e2c-94e0-526cf3346f19")
+	)
+	(wire
+		(pts
+			(xy 196.215 83.82) (xy 197.485 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8ef5645-6cf4-41ef-b78b-80823d3d49f8")
+	)
+	(wire
+		(pts
+			(xy 107.315 130.175) (xy 116.205 130.175)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dce4bbe6-ca19-4254-91af-0c5376f2f2d0")
+	)
+	(wire
+		(pts
+			(xy 107.315 103.505) (xy 116.205 103.505)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e39b0d27-adc9-4d6c-8fbf-f6991747cf1f")
+	)
+	(wire
+		(pts
+			(xy 146.05 127.635) (xy 146.05 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eac2a9cb-1427-4eac-b300-82e26a0269f7")
+	)
+	(wire
+		(pts
+			(xy 107.315 114.3) (xy 116.205 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb0faf92-14ff-4150-97dd-7c548af242a5")
+	)
+	(wire
+		(pts
+			(xy 148.59 93.98) (xy 148.59 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec9d15c9-cfd3-4bc5-943d-837e43e16a54")
+	)
+	(wire
+		(pts
+			(xy 107.315 74.93) (xy 116.205 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdb1df7d-a631-41c3-94e8-ad18ad432048")
+	)
+	(rectangle
+		(start 194.31 95.25)
+		(end 228.6 111.76)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 20db9596-d991-483f-89cc-97c62849976e)
+	)
+	(rectangle
+		(start 194.31 72.39)
+		(end 228.6 93.345)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 6e95ed60-d182-45dc-af81-add31ee5df0c)
+	)
+	(text "Display"
+		(exclude_from_sim no)
+		(at 198.755 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1f80c691-3120-4379-bbd6-ac1da576821e")
+	)
+	(text "Sensor"
+		(exclude_from_sim no)
+		(at 198.755 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "465cae0d-292b-4594-8f87-4535f3e680dc")
+	)
+	(text "Wetter Station Sensorik:\nESP32\nBME688 (https://www.mouser.de/ProductDetail/Bosch-Sensortec/BME688?qs=IS%252B4QmGtzzqQoVDscqwx3A%3D%3D)\nVCNL4040 (https://www.mouser.de/ProductDetail/Vishay-Semiconductors/VCNL4040M3OE-H5?qs=p1ya7m3AA0BNQWa8PTJVKg%3D%3D)\nLTR-390UV (https://www.mouser.de/ProductDetail/LITEON/LTR-390UV-01?qs=g5ciJ0jwZaECcUd5i6p7%252Bg%3D%3D)\nTFT-Display (https://www.mouser.de/c/optoelectronics/displays/lcd-displays/tft-displays-accessories/?q=tft%20display&interface%20type=SPI&instock=y&sort=pricing&NewSearch=1)\n"
+		(exclude_from_sim no)
+		(at 13.335 20.955 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "883ca665-816a-4d7b-8339-84237af860af")
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 202.565 86.995 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "0d9f1bcd-8ce8-4e12-a911-fa7dfcc2cc6f")
+		(property "Reference" "J7"
+			(at 203.835 85.7249 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "SolderJumper"
+			(at 203.835 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:Solder_Jumper"
+			(at 202.565 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 202.565 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 202.565 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e4ae64a0-4a66-431e-97f2-34aba9a9d1b9")
+		)
+		(instances
+			(project "iot_weatherstation_display"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 202.565 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d6310bc-65fb-4635-bc91-427a96ce3f2f")
+		(property "Reference" "J10"
+			(at 203.835 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "SolderJumper"
+			(at 203.835 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:Solder_Jumper"
+			(at 202.565 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 202.565 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 202.565 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "44b3f6a2-8a0b-4089-b8bd-caadbf344d56")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 202.565 90.17 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom yes)
+		(on_board no)
+		(dnp no)
+		(uuid "48887921-9ca7-49cf-9622-2accd3301e68")
+		(property "Reference" "J5"
+			(at 204.47 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "Socket_Display (2x20P)"
+			(at 204.47 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 202.565 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 202.565 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 202.565 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MNR" "200-SSW-120-01-TD006"
+			(at 202.565 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2977589"
+			(at 202.565 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3bf8e93-eaf1-46b5-9545-ccbad92b0483")
+		)
+		(instances
+			(project ""
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 202.565 102.235 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "74346906-5884-4904-b55c-d77698bd69cb")
+		(property "Reference" "J9"
+			(at 203.835 100.9649 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "SolderJumper"
+			(at 203.835 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:Solder_Jumper"
+			(at 202.565 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 202.565 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 202.565 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "95ae70de-4327-4ff2-8ee6-e3114f443a2f")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 202.565 108.585 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a20733f-3752-4b59-8d5e-b0822be01c48")
+		(property "Reference" "J11"
+			(at 203.835 107.3149 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "SolderJumper"
+			(at 203.835 108.585 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:Solder_Jumper"
+			(at 202.565 108.585 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 202.565 108.585 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 202.565 108.585 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a04f2481-c7ae-432e-8fff-2b94cca01282")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 202.565 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "91abc6bd-bd4e-4b42-a621-ccead1c9b78a")
+		(property "Reference" "J4"
+			(at 203.835 82.5499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "SolderJumper"
+			(at 203.835 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:Solder_Jumper"
+			(at 202.565 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 202.565 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 202.565 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "88e1536d-2f03-40b6-9e25-b3d0b7860b83")
+		)
+		(instances
+			(project "iot_weatherstation_display"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 202.565 80.645 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "9481e666-8461-42a6-a441-02ec1a8d57c0")
+		(property "Reference" "J3"
+			(at 203.835 79.3749 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "SolderJumper"
+			(at 203.835 80.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:Solder_Jumper"
+			(at 202.565 80.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 202.565 80.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 202.565 80.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3935c78-4bea-46e3-b143-95c6f3385566")
+		)
+		(instances
+			(project "iot_weatherstation_display"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 116.205 71.755)
+		(size 23.495 73.66)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "096d373d-7ad9-4775-b8b4-7a4c65126281")
+		(property "Sheetname" "ESP32"
+			(at 116.205 71.0434 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ESP32.kicad_sch"
+			(at 116.205 146.685 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "TX0" input
+			(at 116.205 83.82 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9d4759d1-6881-45c8-8c8c-38a07873ecff")
+		)
+		(pin "USB_N" input
+			(at 116.205 74.93 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0adcfa74-b34f-4897-927f-7665a1a7b3b2")
+		)
+		(pin "USB_P" input
+			(at 116.205 77.47 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b3f237d4-ba78-4b58-a077-5b62d429187c")
+		)
+		(pin "RX0" input
+			(at 116.205 81.28 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "751f6130-1ddb-4a0e-b504-0d2140cc4b60")
+		)
+		(pin "SDA" input
+			(at 139.7 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "7be574b5-e8fa-4cb8-9d3b-be930a5fedbd")
+		)
+		(pin "SCL" input
+			(at 139.7 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "da35489e-1dfc-479b-bcd0-19660c65ef95")
+		)
+		(pin "D0" input
+			(at 116.205 122.555 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f15163e7-8151-41bc-b143-7c4d5ca264c3")
+		)
+		(pin "D2" input
+			(at 116.205 127.635 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "14e4a42e-d42b-4921-9d64-d13e39ed42d1")
+		)
+		(pin "D1" input
+			(at 116.205 125.095 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9f261057-920d-4345-b5c3-8fd1cdc74566")
+		)
+		(pin "D3" input
+			(at 116.205 130.175 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c6994d99-08ee-45e7-8bfd-4113ea849634")
+		)
+		(pin "D4" input
+			(at 116.205 132.715 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "6384446a-8075-4bba-8621-d0d095f81195")
+		)
+		(pin "D6" input
+			(at 116.205 137.795 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "15109de8-ba74-4409-8a97-023fd5e059ce")
+		)
+		(pin "D5" input
+			(at 116.205 135.255 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b290b24a-376b-4afc-9a0d-420d0893d8c7")
+		)
+		(pin "D7" input
+			(at 116.205 140.335 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "bfb21499-58c7-424a-973b-b7fcb65a3ed2")
+		)
+		(pin "TFT_LED_PWM" input
+			(at 116.205 143.51 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c97c6e2c-1d2b-4979-9b7b-6733b46ab54b")
+		)
+		(pin "T_CLK" input
+			(at 116.205 111.76 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "dc36414b-f2f8-4f5e-8b17-3b8b94665cd8")
+		)
+		(pin "T_DIN" input
+			(at 116.205 116.84 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "89494a59-78f2-46ba-8b94-8a05bf2332a5")
+		)
+		(pin "T_CS" input
+			(at 116.205 114.3 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "1b7b3ad7-0a5c-412a-9918-a0fea665b155")
+		)
+		(pin "RS" input
+			(at 116.205 98.425 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "875b9efb-b145-46aa-8a75-47915f0b1e17")
+		)
+		(pin "CS" input
+			(at 116.205 100.965 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "edece1de-33c9-4adc-b9c9-1699999c347b")
+		)
+		(pin "REST" input
+			(at 116.205 106.045 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "520562ce-2461-460c-9c79-f141ffc31a22")
+		)
+		(pin "RD" input
+			(at 116.205 103.505 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "dbde04ed-187f-4f3a-bec3-1dbd9a7d65d1")
+		)
+		(pin "WR" input
+			(at 116.205 95.885 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4f7eb84b-0015-40c5-9570-bad3300ccda3")
+		)
+		(pin "T_IRQ" input
+			(at 116.205 119.38 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "decf1004-9594-48f2-972d-ca90201c357a")
+		)
+		(pin "T_DO" input
+			(at 116.205 109.22 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "aa226499-c884-49f7-a966-5a2e9a932801")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 154.305 73.66)
+		(size 12.7 9.525)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "120a8055-c5eb-4fcc-b6d3-2525bfe959ad")
+		(property "Sheetname" "JST"
+			(at 154.305 72.9484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "jst.kicad_sch"
+			(at 154.305 83.7696 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCL" input
+			(at 154.305 80.01 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4b97ad20-1b74-43de-80f8-e73c18a5b2e8")
+		)
+		(pin "SDA" input
+			(at 154.305 77.47 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "30bee683-cd2c-4007-bd1c-8796b9dae2ae")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 154.305 106.045)
+		(size 12.7 8.89)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4d33df3f-3064-4a30-955b-413183f84fc8")
+		(property "Sheetname" "BME688"
+			(at 154.305 105.3334 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "bme688.kicad_sch"
+			(at 154.305 115.5196 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCL" input
+			(at 154.305 111.76 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ab5ff5e0-dcdd-4770-9fed-09d0b491149d")
+		)
+		(pin "SDA" input
+			(at 154.305 109.22 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9e358d8e-9c38-41e0-aee3-308c51169058")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 154.305 121.92)
+		(size 12.7 8.89)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6eec43bd-f28f-4d87-ac62-17e3d7130482")
+		(property "Sheetname" "LTR390"
+			(at 154.305 121.2084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ltr390.kicad_sch"
+			(at 154.305 131.3946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SDA" input
+			(at 154.305 125.095 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "cec67dc9-7db4-4f42-b8f0-00904992c6e2")
+		)
+		(pin "SCL" input
+			(at 154.305 127.635 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d6f8550b-7ea2-499f-8634-548921758de1")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 154.305 90.805)
+		(size 12.7 8.89)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7667fa76-a7f8-41eb-8a77-2ea87a7bd6f9")
+		(property "Sheetname" "VCNL4040"
+			(at 154.305 90.0934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "vcnl4040.kicad_sch"
+			(at 154.305 100.2796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCL" input
+			(at 154.305 96.52 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d3623288-baf5-4ed9-96c0-4e3e10fe982e")
+		)
+		(pin "SDA" input
+			(at 154.305 93.98 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a1f6d7c3-49c8-49a5-bc0a-2270cd5d0f89")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 92.075 93.345)
+		(size 15.24 52.07)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "db54a9e3-98a4-4ac8-997f-7773de462e3e")
+		(property "Sheetname" "TFT_Display"
+			(at 92.075 92.6334 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "TFT_display.kicad_sch"
+			(at 87.63 146.685 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "T_DO" input
+			(at 107.315 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0d7ea522-78f2-46f4-8b1b-705b2660c18b")
+		)
+		(pin "T_CLK" input
+			(at 107.315 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ed348c26-535c-4584-86ae-d9760bf2783b")
+		)
+		(pin "T_CS" input
+			(at 107.315 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "62e1425b-db4c-4723-8a9c-70f10497497e")
+		)
+		(pin "T_DIN" input
+			(at 107.315 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a7ffc426-9e2d-4247-bfcc-17b410cf304a")
+		)
+		(pin "T_IRQ" input
+			(at 107.315 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bbbce892-9572-4d8b-a6ee-c7e792ce7fad")
+		)
+		(pin "RS" input
+			(at 107.315 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c9c41b52-5af2-4b26-8fe2-16b969dfb6f1")
+		)
+		(pin "TFT_LED_PWM" input
+			(at 107.315 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "982ae26b-a4b0-4549-990f-1669e43dbc3c")
+		)
+		(pin "D2" input
+			(at 107.315 127.635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bee9022a-0b79-47bf-9d1b-fed8d7a99c48")
+		)
+		(pin "D3" input
+			(at 107.315 130.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ddd83759-aba2-4b83-8861-2f089c55ea78")
+		)
+		(pin "D7" input
+			(at 107.315 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "15ca9b9a-9b7c-4953-b4d2-a0a97cc967ba")
+		)
+		(pin "D4" input
+			(at 107.315 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d20c0080-0228-4e5d-966b-71c40414242c")
+		)
+		(pin "D5" input
+			(at 107.315 135.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "e22d9a8c-b293-4810-80f9-68fb8ae5ff42")
+		)
+		(pin "D6" input
+			(at 107.315 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d5f508e9-f6ad-4d65-8538-b6f1da4ea423")
+		)
+		(pin "D0" input
+			(at 107.315 122.555 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c0074939-4a4d-4697-ba9b-dac3ff9af60c")
+		)
+		(pin "D1" input
+			(at 107.315 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a0876775-6e86-4a9a-8f11-463a4bb5d184")
+		)
+		(pin "CS" input
+			(at 107.315 100.965 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "94233f42-e94e-440f-aad7-e3e7b7774ab9")
+		)
+		(pin "RD" input
+			(at 107.315 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d4063ea1-a237-4653-9b6a-11b0628e7370")
+		)
+		(pin "WR" input
+			(at 107.315 95.885 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a77478c7-5fd5-4946-87ce-a0d26be2d2c7")
+		)
+		(pin "REST" input
+			(at 107.315 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6ae59129-4df4-465e-9fd6-4923c08c7ddb")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 92.075 72.39)
+		(size 15.24 13.97)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ddc4da95-f762-46de-a79a-995c11b477a3")
+		(property "Sheetname" "Supply & USB"
+			(at 92.075 71.6784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "supply_usb.kicad_sch"
+			(at 88.265 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USB_P" input
+			(at 107.315 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f2b028a7-419b-4060-8acc-05fbaf6896ff")
+		)
+		(pin "USB_N" input
+			(at 107.315 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0465556a-dfe1-4a7f-85d7-7a595a3cac73")
+		)
+		(pin "RX0" input
+			(at 107.315 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "637e61e7-92c9-4ef5-b0ce-7f08d295a261")
+		)
+		(pin "TX0" input
+			(at 107.315 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a2627347-1d36-4989-b626-2824cd00bb0b")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

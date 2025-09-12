@@ -1,0 +1,1242 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "0ae71fa6-a629-4456-8e0e-a6e2fe08fa81")
+	(paper "A4")
+	(lib_symbols
+		(symbol "ProjectSymbols:JST-SH1.0-4P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 5.08 7.112 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "JST-SH1.0-4P"
+				(at 5.08 4.572 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "ProjectFootprints:JST-SH1.0-4P"
+				(at 19.05 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf"
+				(at 19.05 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "CONN HEADER SMD R/A 4POS 1MM"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MNR" "306-SM04BSRSSTBLFSN"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "JST-SH1.0-4P_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 17.78 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 22.86 0 180)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -2.54 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -5.08 180)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -7.62 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "MP1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "MP2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:+3V3"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0) hide
+					(name "+3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0) hide
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 147.32 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d373d76-c551-4278-b762-fe08b799df86")
+	)
+	(junction
+		(at 147.32 80.645)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9fb71d57-e2ef-4e72-b18b-cade1599485f")
+	)
+	(wire
+		(pts
+			(xy 116.84 55.88) (xy 120.015 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0220a4dc-294e-4629-9efc-289b8283ede9")
+	)
+	(wire
+		(pts
+			(xy 119.38 63.5) (xy 120.015 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12fdf0ce-73f5-4add-ba53-4d2ef9300db6")
+	)
+	(wire
+		(pts
+			(xy 147.32 58.42) (xy 147.32 60.325)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fa45f73-4603-45ea-91bc-ca59f91917f6")
+	)
+	(wire
+		(pts
+			(xy 142.875 55.88) (xy 147.32 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "511f8029-ecc6-4e2a-ac86-4761703394ef")
+	)
+	(wire
+		(pts
+			(xy 147.32 80.645) (xy 147.32 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51bf9c2a-0b57-49db-afb5-d67fde239c1e")
+	)
+	(wire
+		(pts
+			(xy 116.84 78.105) (xy 120.015 78.105)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b4aa52b-8c61-436a-a958-a9101143b048")
+	)
+	(wire
+		(pts
+			(xy 119.38 83.185) (xy 120.015 83.185)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bbf1643-3a1e-4473-bc31-05c3e81e8a1b")
+	)
+	(wire
+		(pts
+			(xy 119.38 60.96) (xy 120.015 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7aa50dfd-9134-466d-bc7c-e76dd754d355")
+	)
+	(wire
+		(pts
+			(xy 142.875 78.105) (xy 147.32 78.105)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7bc2ee0f-76de-4b08-ae59-204d1fd73e8f")
+	)
+	(wire
+		(pts
+			(xy 120.015 58.42) (xy 110.49 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82a7b8e8-69d0-44f3-86ec-a7866eb710ab")
+	)
+	(wire
+		(pts
+			(xy 147.32 58.42) (xy 142.875 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c879db4-513e-4dad-a974-28c9cd28b6c3")
+	)
+	(wire
+		(pts
+			(xy 120.015 80.645) (xy 110.49 80.645)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "975938f2-71e5-40ba-b92d-e6babcb6952b")
+	)
+	(wire
+		(pts
+			(xy 147.32 78.105) (xy 147.32 80.645)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c40c4a5f-7d2e-4e8b-b184-5fd345599e8e")
+	)
+	(wire
+		(pts
+			(xy 147.32 80.645) (xy 142.875 80.645)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccef3fc2-e93a-43ae-b83c-5bd5eb23d5d9")
+	)
+	(wire
+		(pts
+			(xy 110.49 58.42) (xy 110.49 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3b4641d-f59c-415d-be34-446ec9ddf763")
+	)
+	(wire
+		(pts
+			(xy 119.38 85.725) (xy 120.015 85.725)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eca66d5b-b45e-4d0d-841b-9b25335a7931")
+	)
+	(wire
+		(pts
+			(xy 110.49 80.645) (xy 110.49 81.915)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f616d711-557c-49fd-8578-6fbf489eef1c")
+	)
+	(wire
+		(pts
+			(xy 147.32 55.88) (xy 147.32 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff1e1747-b9e8-4039-b14e-9d1c4e0bab88")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 119.38 85.725 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "041acc70-f2d3-4b79-9e35-9bb9960f0ced")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 119.38 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "807edd59-a2ce-4f7c-b067-7a29e3c2cb74")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 119.38 83.185 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cea4580a-65bf-4306-9b56-188f6730f350")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 119.38 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f34bdd83-c430-4d2a-81a7-961669264e2c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 82.55 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "465a4a82-2459-4953-83df-d7a90cf9c5bc")
+		(property "Reference" "#PWR29"
+			(at 147.32 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "805860ca-9b6a-4430-95d2-a97dccebd06c")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "#PWR29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProjectSymbols:JST-SH1.0-4P")
+		(at 142.875 55.88 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "55ad2ba3-45b8-49cc-a9f4-83e8e78c9284")
+		(property "Reference" "J6"
+			(at 136.525 48.895 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JST-SH1.0-4P"
+			(at 131.445 51.435 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:JST-SH1.0-4P"
+			(at 123.825 150.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf"
+			(at 123.825 250.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "CONN HEADER SMD R/A 4POS 1MM"
+			(at 142.875 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MNR" ""
+			(at 142.875 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 142.875 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "MP2"
+			(uuid "865e1452-dcff-43d3-a5ef-d37a00598a77")
+		)
+		(pin "3"
+			(uuid "fb8bf596-e136-42ee-81ae-3904f97fe7b8")
+		)
+		(pin "MP1"
+			(uuid "cc2be847-bf96-4f58-99f3-417cd80f11e7")
+		)
+		(pin "1"
+			(uuid "a8b8c504-c8fe-4e64-acbd-b770599e0786")
+		)
+		(pin "2"
+			(uuid "d706a488-4017-4008-b225-e59f71e52e12")
+		)
+		(pin "4"
+			(uuid "cfef9d5c-22b6-48ab-8458-6d086f8a22bb")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 116.84 78.105 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "83033910-24f4-43c3-b93f-7e98e1d5fd32")
+		(property "Reference" "#PWR30"
+			(at 116.84 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 119.38 74.295 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a0a6b015-e5f7-477a-b6d0-22d71acb2e6c")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "#PWR30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 110.49 59.69 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e1f0f01-30ee-409a-9f70-7050eef46409")
+		(property "Reference" "#PWR11"
+			(at 110.49 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 110.49 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 110.49 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 110.49 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5d39b345-8574-461f-a11b-6d27f4532cdd")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "#PWR11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 116.84 55.88 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "be164141-1728-4fa9-bfab-0436e0f1eae3")
+		(property "Reference" "#PWR10"
+			(at 116.84 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 119.38 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b6f859a-9c93-4bfe-90de-9d0aad263024")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "#PWR10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 110.49 81.915 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c72d789f-eb1a-4c57-9cb6-85c747f40592")
+		(property "Reference" "#PWR34"
+			(at 110.49 88.265 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 110.49 85.725 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 110.49 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 110.49 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "282fed01-8bd2-4bc6-a81d-a46eee4b80c1")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "#PWR34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 60.325 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d7614f3b-80fb-4d31-b10d-9da47fe79c03")
+		(property "Reference" "#PWR13"
+			(at 147.32 66.675 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 64.135 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 60.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e60f1fec-8d5b-44bf-b4b7-25c642c83b0a")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "#PWR13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProjectSymbols:JST-SH1.0-4P")
+		(at 142.875 78.105 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f01130dd-a95a-49dc-bf84-0fb0b0ae07c3")
+		(property "Reference" "J8"
+			(at 131.445 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "JST-SH1.0-4P"
+			(at 131.445 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:JST-SH1.0-4P"
+			(at 123.825 173.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf"
+			(at 123.825 273.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "CONN HEADER SMD R/A 4POS 1MM"
+			(at 142.875 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MNR" ""
+			(at 142.875 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 142.875 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "MP2"
+			(uuid "eaf9e375-2768-44cc-9b59-f295a1299a6d")
+		)
+		(pin "3"
+			(uuid "1fbe4594-4d43-4f86-bd0d-123b9fe66d58")
+		)
+		(pin "MP1"
+			(uuid "5c6a3b19-4cfa-4e42-b81b-c77630ad427b")
+		)
+		(pin "1"
+			(uuid "b45cd4f2-1da8-403f-bea6-ee0feeba42cc")
+		)
+		(pin "2"
+			(uuid "f571cc5a-39ed-40f4-b12a-99d565bafd26")
+		)
+		(pin "4"
+			(uuid "1bf695aa-60e6-4885-b664-fc36aa30f2cd")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/120a8055-c5eb-4fcc-b6d3-2525bfe959ad"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

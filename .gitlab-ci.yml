@@ -1,0 +1,103 @@
+image: kicad/kicad:9.0-full
+
+variables:
+  HARDWARE_DIR: "$CI_PROJECT_DIR/Hardware/"
+  PCB_LAYERS: "F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts"
+  KICAD9_3DMODEL_DIR: "/usr/share/kicad/3dmodels"
+  KICAD8_3DMODEL_DIR: "/usr/share/kicad/3dmodels"
+
+stages:
+  - drc
+  - export
+
+drc:
+  stage: drc
+  script:
+    - echo "Starte DRC für PCB-Datei..."
+    - if ls "$HARDWARE_DIR"/*.kicad_pcb >/dev/null 2>&1; then kicad-cli pcb drc --severity-error --exit-code-violations "$HARDWARE_DIR"/*.kicad_pcb; else echo "Keine .kicad_pcb Datei gefunden"; exit 1; fi
+    - echo "DRC abgeschlossen."
+  rules:
+    - changes:
+        - Production/*.zip
+
+export:
+  stage: export
+  needs:
+    - drc
+  before_script:
+    - sudo apt-get update && sudo apt-get install -y poppler-utils
+  script:
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
+    - git config --global user.name "GitLab CI"
+    - git config --global user.email "ci@mygit.th-deg.de"
+    - echo "Starte PDF-Export für PCB-Layer..."
+    - mkdir -p Docs/temp
+    - |
+      if ls "$HARDWARE_DIR"/*.kicad_pcb >/dev/null 2>&1; then
+        PCB_FILE=$(ls "$HARDWARE_DIR"/*.kicad_pcb | head -n1)
+        PROJECT_NAME=$(basename "$PCB_FILE" .kicad_pcb)
+        declare -a LAYERS=("F.Cu" "In1.Cu" "In2.Cu" "B.Cu" "F.SilkS" "B.SilkS" "F.Mask" "B.Mask" "Edge.Cuts")
+        declare -a EXPORT_PDFS=()
+        for layer in "${LAYERS[@]}"; do
+          if grep -q "$layer" "$PCB_FILE"; then
+            OUT_FILE="Docs/temp/board_${layer//./_}.pdf"
+            echo "Exportiere Layer: $layer"
+            kicad-cli pcb export pdf --output "$OUT_FILE" --layers "$layer" "$PCB_FILE"
+            EXPORT_PDFS+=("$OUT_FILE")
+          else
+            echo "Layer $layer nicht vorhanden – überspringe."
+          fi
+        done
+        if [ ${#EXPORT_PDFS[@]} -gt 0 ]; then
+          echo "Kombiniere PDF-Dateien..."
+          pdfunite "${EXPORT_PDFS[@]}" "Docs/Project_board_layers.pdf"
+        else
+          echo "Keine Layer zum Kombinieren gefunden. Export abgebrochen."
+          exit 1
+        fi
+      else
+        echo "Keine .kicad_pcb Datei gefunden"
+        exit 1
+      fi
+    - echo "PCB-Layer-Export abgeschlossen."
+    - echo "Exportiere Schaltpläne..."
+    - mkdir -p Docs/temp_sch
+    - |
+      if ls "$HARDWARE_DIR"/*.kicad_pcb >/dev/null 2>&1; then
+        sch_file="${HARDWARE_DIR}/${PROJECT_NAME}.kicad_sch"
+        if [ -f "$sch_file" ]; then
+          kicad-cli sch export pdf --output "Docs/Project_schematics.pdf" "$sch_file" || echo "Export von $sch_file fehlgeschlagen"
+        else
+          echo "Keine passende .kicad_sch-Datei gefunden"
+        fi
+      else
+        echo "Keine .kicad_pcb Datei gefunden"
+      fi
+    - rm -rf Docs/temp Docs/temp_sch
+    - echo "Schaltpläne-Export abgeschlossen."
+    - echo "Starte Render-Prozess für PCB-Vorschau..."
+    - |
+      if ls "$HARDWARE_DIR"/*.kicad_pcb >/dev/null 2>&1; then
+        PCB_FILE=$(ls "$HARDWARE_DIR"/*.kicad_pcb | head -n1);
+        TIMESTAMP=$(date +%Y-%m-%d)
+        SHORT_HASH=$(git rev-parse --short HEAD)
+        PREVIEW_FILE="Docs/board_preview_${TIMESTAMP}_${SHORT_HASH}.png"
+        kicad-cli pcb render --output "$PREVIEW_FILE" --width 1920 --height 1080 --side top --background transparent --quality high "$PCB_FILE"
+        echo "Render-Prozess abgeschlossen."
+
+        echo "Füge Bild in README.md ein..."
+        if [ -f README.md ]; then
+          sed -i "/<!-- Keep this line! Rendered picture of PCB is going to be displayed after Production files are pushed to branch! -->/a ![]($PREVIEW_FILE)" README.md
+        fi
+      else
+        echo "Keine .kicad_pcb Datei gefunden";
+        exit 1;
+      fi
+    - echo "Render-Prozess abgeschlossen."
+    - echo "Commit und Push des aktualisierten Vorschaubildes..."
+    - git add Docs/Project_board_layers.pdf Docs/Project_schematics.pdf Docs/board_preview_${TIMESTAMP}_${SHORT_HASH}.png ./README.md || true
+    - git commit -m "Update PCB preview image and PDFs" || true
+    - git push "https://oauth2:${MYGIT_DOCKER_ACCESS_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" HEAD:${CI_COMMIT_REF_NAME}
+  rules:
+    - changes:
+        - Production/*.zip

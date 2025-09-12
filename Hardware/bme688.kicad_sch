@@ -1,0 +1,1514 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "f0064529-2a4e-4cc9-97c9-51ed44dcf974")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Device:C_Small"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.254) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Small"
+				(at 0.254 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "capacitor cap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_Small_0_1"
+				(polyline
+					(pts
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3302)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ProjectSymbols:BME688"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -3.048 7.874 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BME688"
+				(at 0 5.842 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ProjectFootprints:BME688"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme688-ds000.pdf"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BME688_1_1"
+				(rectangle
+					(start -6.35 0)
+					(end 6.35 -21.59)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at -1.27 -24.13 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 -10.16 0)
+					(length 2.54)
+					(name "CS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 8.89 -10.16 180)
+					(length 2.54)
+					(name "SDI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 8.89 -12.7 180)
+					(length 2.54)
+					(name "SCK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -8.89 -12.7 0)
+					(length 2.54)
+					(name "SDO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -1.27 2.54 270)
+					(length 2.54)
+					(name "VDDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 1.27 -24.13 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 1.27 2.54 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:+3V3"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0) hide
+					(name "+3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0) hide
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 134.62 86.995)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "576dc324-3ead-494a-975f-9667c809b995")
+	)
+	(junction
+		(at 147.955 86.995)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5af878ed-14fd-4bed-af6a-526227fab808")
+	)
+	(junction
+		(at 134.62 93.345)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "78daa485-6b87-4fe6-96dd-d007d6f90088")
+	)
+	(junction
+		(at 135.89 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b68053a6-195e-4d60-9323-6d39aa5d2ba5")
+	)
+	(wire
+		(pts
+			(xy 123.825 111.125) (xy 127 111.125)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d051001-733b-44ad-814e-5b782ec88a10")
+	)
+	(wire
+		(pts
+			(xy 134.62 122.555) (xy 134.62 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ab44777-4ab6-4f7f-9e10-65d6b177a400")
+	)
+	(wire
+		(pts
+			(xy 121.92 93.345) (xy 121.92 92.075)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b974362-406a-4d28-8a00-c98b0387c9fe")
+	)
+	(wire
+		(pts
+			(xy 134.62 86.995) (xy 121.92 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57a4d302-6127-4d1a-8092-e456826f6f4b")
+	)
+	(wire
+		(pts
+			(xy 135.89 124.46) (xy 135.89 126.365)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f68515b-946f-4f2d-bf79-fe90e78805fc")
+	)
+	(wire
+		(pts
+			(xy 137.16 86.995) (xy 137.16 95.885)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "879ff093-8625-4ab0-ac56-adb361111b7b")
+	)
+	(wire
+		(pts
+			(xy 137.16 86.995) (xy 147.955 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87cd5fd5-5146-4b9f-abfd-94fd00877c57")
+	)
+	(wire
+		(pts
+			(xy 134.62 93.345) (xy 134.62 95.885)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "891eb359-8738-45db-b3d6-69b6289e0ad3")
+	)
+	(wire
+		(pts
+			(xy 134.62 124.46) (xy 135.89 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cfd71b6-54f4-4911-839f-4086d549388c")
+	)
+	(wire
+		(pts
+			(xy 137.16 124.46) (xy 135.89 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a79b3a03-4262-4552-b4e0-d6bfd2e80d42")
+	)
+	(wire
+		(pts
+			(xy 147.955 83.82) (xy 147.955 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0b48e91-18ab-4eb6-b503-34badd246747")
+	)
+	(wire
+		(pts
+			(xy 137.16 122.555) (xy 137.16 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b31a0a8e-45fb-40d9-a21c-84422315792e")
+	)
+	(wire
+		(pts
+			(xy 123.825 113.03) (xy 123.825 111.125)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7053f3a-a9d0-41fa-8b1e-676e32ab78c7")
+	)
+	(wire
+		(pts
+			(xy 144.78 108.585) (xy 147.32 108.585)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d39ff1bd-f683-4c33-a646-49f39240cbc9")
+	)
+	(wire
+		(pts
+			(xy 134.62 83.82) (xy 134.62 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd0ed991-ccc0-4d9e-9bd9-94c13b8bdcc1")
+	)
+	(wire
+		(pts
+			(xy 127 108.585) (xy 125.095 108.585)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd81ffaa-da7f-4042-9c1c-40257f897a87")
+	)
+	(wire
+		(pts
+			(xy 147.955 93.345) (xy 147.955 92.075)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8bb81aa-2c87-4a28-b998-2d3e7768619a")
+	)
+	(wire
+		(pts
+			(xy 125.095 93.345) (xy 134.62 93.345)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8dae4c1-e592-4ac9-bdbf-89d9121a389b")
+	)
+	(wire
+		(pts
+			(xy 125.095 108.585) (xy 125.095 93.345)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eda654b6-a952-4f0b-8a36-3ca47b7997cc")
+	)
+	(wire
+		(pts
+			(xy 134.62 86.995) (xy 134.62 93.345)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1ba2bdb-ce02-4405-b0b4-fde34a77f27a")
+	)
+	(wire
+		(pts
+			(xy 144.78 111.125) (xy 147.32 111.125)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6b7dcb9-dc0e-43d0-a4b5-d78bd1a17230")
+	)
+	(rectangle
+		(start 112.395 74.93)
+		(end 157.48 132.08)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 9ee0c7fc-931e-42ec-b596-9f09b249be3f)
+	)
+	(text "BME688"
+		(exclude_from_sim no)
+		(at 117.475 78.105 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "84653cb1-a53e-41b7-951b-74b8ca252034")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 147.32 108.585 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "14b73454-1947-47ab-aeae-7c94df1115f3")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 147.32 111.125 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "34a6fe5a-321f-40c1-9901-409e7737ede6")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 121.92 93.345 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "34187401-ca70-4ee5-87cb-f0ccbc29249e")
+		(property "Reference" "#PWR42"
+			(at 121.92 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 93.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 93.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 93.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4822ec3c-aa6b-42f4-afc6-0f9f90eb9dd6")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "#PWR42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 147.955 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4ac7d90a-fe72-4a39-9722-d533ce83b967")
+		(property "Reference" "#PWR41"
+			(at 147.955 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 144.653 80.264 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.955 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.955 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 147.955 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f1c4835-3c87-4fb8-a0d1-7bcb0afda1aa")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "#PWR41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 135.89 126.365 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4b0c0be5-8a2d-46f3-8499-c5eac16952f1")
+		(property "Reference" "#PWR48"
+			(at 135.89 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 130.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "083a82f2-e38c-46ac-95a6-2f1477307a7e")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "#PWR48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 121.92 89.535 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "56908edd-3f40-40fd-ab38-fc25e4f84746")
+		(property "Reference" "C7"
+			(at 119.38 88.2712 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 119.38 90.8112 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 121.92 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/281/1/GCM188R91E104KA37_04A-3144793.pdf"
+			(at 121.92 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 121.92 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MNR" "81-GCM188R91E104KA7D"
+			(at 121.92 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1591"
+			(at 121.92 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4806b77b-8f03-412b-86ad-632fce457792")
+		)
+		(pin "2"
+			(uuid "cdd8e93f-37e1-4b88-a10d-1778c399c9b8")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProjectSymbols:BME688")
+		(at 135.89 98.425 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7451fcde-8f5c-4316-8a6b-36566d09f87b")
+		(property "Reference" "U2"
+			(at 140.97 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BME688"
+			(at 143.51 123.825 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ProjectFootprints:BME688"
+			(at 135.89 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme688-ds000.pdf"
+			(at 135.89 88.265 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MNR" "262-BME688 "
+			(at 135.89 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3664478"
+			(at 135.89 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "8f50835b-83a4-43b3-8638-4a2062e0f7ba")
+		)
+		(pin "2"
+			(uuid "afb00a6b-0405-4881-bfba-949f0d67cbbe")
+		)
+		(pin "6"
+			(uuid "5c8bfef7-83e0-4804-aa82-ecec07148e6f")
+		)
+		(pin "8"
+			(uuid "a587510e-b09a-4ad3-a810-bd8a16078a57")
+		)
+		(pin "3"
+			(uuid "c9c19599-180a-4edb-a1ec-c1a40c0fe9dd")
+		)
+		(pin "4"
+			(uuid "ca968ac4-2a65-44c6-93ab-a042028eb1dd")
+		)
+		(pin "7"
+			(uuid "c057338a-f3a5-4966-8116-68aec5a0033b")
+		)
+		(pin "1"
+			(uuid "1e78c9b9-0fc2-471c-a438-648120c152be")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 147.955 89.535 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "753193a7-2098-4eff-8b32-98e464f8dc97")
+		(property "Reference" "C8"
+			(at 150.495 88.2712 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 150.495 90.8112 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 147.955 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/281/1/GCM188R91E104KA37_04A-3144793.pdf"
+			(at 147.955 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 147.955 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MNR" "81-GCM188R91E104KA7D"
+			(at 147.955 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1591"
+			(at 147.955 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7bd2d4c9-4829-44fc-b916-4a411bd9103f")
+		)
+		(pin "2"
+			(uuid "de39ee92-3e58-4709-8274-5682bcb31d95")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 123.825 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "875b54da-5019-4a18-adf8-994549c3b4ad")
+		(property "Reference" "#PWR47"
+			(at 123.825 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.825 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.825 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.825 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.825 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "75680ff4-f90a-4c9e-b621-57110d550c17")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "#PWR47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.955 93.345 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "aa059258-f938-4a06-9e2f-010331f557b2")
+		(property "Reference" "#PWR46"
+			(at 147.955 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.955 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.955 93.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.955 93.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 147.955 93.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a56cb84-010e-426c-b087-dd3f5a614c8e")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "#PWR46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 134.62 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e68f3cef-5cc0-4cc7-8578-65bd1de957b6")
+		(property "Reference" "#PWR40"
+			(at 134.62 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 131.318 80.264 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 134.62 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "654e4cd6-9399-461d-85cf-2144fe040a14")
+		)
+		(instances
+			(project "iot_weatherstation_full_vcut"
+				(path "/cdbed8bd-c396-4548-8c14-ae5beaf6f207/4d33df3f-3064-4a30-955b-413183f84fc8"
+					(reference "#PWR40")
+					(unit 1)
+				)
+			)
+		)
+	)
+)
