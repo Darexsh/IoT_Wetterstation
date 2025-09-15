@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,8.0.9*%
-%TF.CreationDate,2025-09-12T11:02:16+02:00*%
+%TF.CreationDate,2025-09-15T10:43:37+02:00*%
 %TF.ProjectId,iot_weatherstation_full_vcut,696f745f-7765-4617-9468-657273746174,rev?*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Drillmap*%
 %TF.FilePolarity,Positive*%
 %FSLAX45Y45*%
 G04 Gerber Fmt 4.5, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 8.0.9) date 2025-09-12 11:02:16*
+G04 Created by KiCad (PCBNEW 8.0.9) date 2025-09-15 10:43:37*
 %MOMM*%
 %LPD*%
 G01*
@@ -16,6 +16,8 @@ G04 APERTURE LIST*
 %ADD12C,0.320000*%
 G04 APERTURE END LIST*
 D10*
+X12931140Y-12004040D02*
+X31031180Y-12004040D01*
 X12931140Y-22804040D02*
 X31031140Y-22804040D01*
 X31031438Y-10573774D02*
