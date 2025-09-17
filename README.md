@@ -21,7 +21,7 @@
 
 | Name | GitHub | Role | Contact | Contributions |
 | --- | --- | --- | --- | --- |
-| **[Daniel Sichler aka Darexsh](https://github.com/Darexsh)** | [Link]([https://github.com/YourGitHubProfile](https://github.com/Darexsh?tab=repositories)) | Hardware & Firmware Development 🖥️🛠️, Display Integration 🎨 | 📧 Email | Concept, Firmware, Display UI, Sensor Integration |
+| **[Daniel Sichler aka Darexsh](https://github.com/Darexsh)** | [Link](https://github.com/Darexsh?tab=repositories) | Hardware & Firmware Development 🖥️🛠️, Display Integration 🎨 | 📧 Email | Concept, Firmware, Display UI, Sensor Integration |
 
 * * *
 
