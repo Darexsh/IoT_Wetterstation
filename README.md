@@ -1,60 +1,66 @@
 * * *
 
+<div align="center">
+
 🌦️ ESP32-S3 Weather Station
 ============================
 
-This project is a **custom weather station** built on the ESP32-S3 microcontroller. It integrates multiple sensors and a touchscreen display to provide real-time environmental monitoring, both locally and via a web interface.
+**A custom weather station with ESP32-S3, multiple sensors, and a 7" resistive TFT display**  
+🖥️🌡️💧☀️🌐
+
+
+![Projekt-Status](https://img.shields.io/badge/Status-Aktiv-brightgreen) ![Lizenz](https://img.shields.io/badge/Lizenz-MIT-blue) ![Version](https://img.shields.io/badge/Version-1.0-orange)
+
+
+</div>
 
 * * *
 
-⚡ Features
-----------
+✨ Authors
+---------
 
-* **🖥️ Microcontroller:** ESP32-S3 for high-performance processing and Wi-Fi connectivity.
+| Name | GitHub | Role | Contact | Contributions |
+| --- | --- | --- | --- | --- |
+| **[Daniel Sichler aka Darexsh](https://github.com/Darexsh)** | [Link]([https://github.com/YourGitHubProfile](https://github.com/Darexsh?tab=repositories)) | Hardware & Firmware Development 🖥️🛠️, Display Integration 🎨 | 📧 Email | Concept, Firmware, Display UI, Sensor Integration |
+
+* * *
+
+🚀 About the Project
+--------------------
+
+This project is a **custom weather station** based on the ESP32-S3 microcontroller. It combines multiple environmental sensors with a 7-inch resistive TFT display and a web interface to monitor data remotely and locally.
+
+### 🛠️ Technologies
+
+* **Microcontroller:** ESP32-S3
     
-* **🛠️ Sensors:**
+* **Sensors:** VCNL4040 (ambient light & proximity), BME688 (temperature, humidity, pressure, gas), LTR390-UV (UV index UVA/B)
     
-    * **VCNL4040:** Measures ambient light and proximity.
-        
-    * **BME688:** Measures temperature 🌡️, humidity 💧, air pressure 🌬️, and air quality/gas levels 🌫️.
-        
-    * **LTR390-UV:** Measures UV light ☀️ and provides the UV index (UVA/UVB).
-        
-* **🖲️ Display:** 7-inch resistive touch TFT display connected via **parallel interface (DB0–DB7)**.
+* **Display:** 7" resistive TFT, connected via **DB0–DB7 (parallel interface)** with automatic brightness adjustment based on ambient light
     
-    * Display brightness is automatically adjusted based on ambient light 🌙.
-        
-* **🌐 Web Interface:** ESP32-S3 hosts a web page where all sensor readings can be monitored remotely.
+* **Software:** C++, Arduino IDE / PlatformIO
     
-* **💡 Automatic Brightness Control:** Display dims in low-light environments for energy efficiency and comfort.
+* **Web Interface:** Hosted by ESP32-S3 for remote monitoring
     
-* **🎨 Touchscreen UI:** Navigate easily through various sensor readings and settings.
+* **Tools:** Git, Wireshark (optional for network debugging)
     
 
 * * *
 
-🔍 Sensor Details
------------------
+📋 Features
+===========
 
-* **VCNL4040:** Provides both proximity and light measurements to monitor the surrounding environment and adjust the display brightness.
+* **🌡️ Environmental Measurements:** Temperature, humidity, pressure, air quality, ambient light, UV index
     
-* **BME688:** Advanced environmental sensor capable of measuring temperature, humidity, atmospheric pressure, and air quality/gas concentrations.
+* **🖲️ Touchscreen Display:** 7" resistive TFT with local visualization of all sensor data
     
-* **LTR390-UV:** Accurately measures UV light, allowing calculation of UV index (A or B) for health and safety purposes.
+* **💡 Automatic Brightness:** Display dims based on ambient light from VCNL4040
     
-
-* * *
-
-🌐 Web Dashboard
-----------------
-
-The ESP32-S3 creates a local web server, accessible via Wi-Fi. Features include:
-
-* Real-time display of all sensor readings 📊.
+* **🌐 Web Dashboard:** Access real-time sensor data remotely via a browser
     
-* Historical logging of measurements for analysis 🗂️.
+* **📊 Historical Logging (optional):** Track trends for temperature, humidity, and UV exposure
     
-* Mobile-friendly interface, accessible from smartphones, tablets, or PCs 📱💻.
+* **⚡ Alerts & Automation (optional):** Configure thresholds for UV, temperature, and air quality
     
 
 * * *
@@ -62,13 +68,13 @@ The ESP32-S3 creates a local web server, accessible via Wi-Fi. Features include:
 🔧 Hardware Setup
 -----------------
 
-* **ESP32-S3 microcontroller**.
+* **ESP32-S3 microcontroller**
     
-* **VCNL4040, BME688, LTR390-UV sensors** connected via I2C.
+* **VCNL4040, BME688, LTR390-UV sensors** connected via I2C
     
-* **7-inch resistive TFT touch display** connected via **DB0–DB7 (parallel interface)**.
+* **7-inch resistive TFT touch display** connected via **DB0–DB7 (parallel interface)**
     
-* **Power supply** compatible with ESP32-S3 and TFT display ⚡.
+* Compatible **power supply** for ESP32-S3 and TFT display
     
 
 * * *
@@ -76,29 +82,15 @@ The ESP32-S3 creates a local web server, accessible via Wi-Fi. Features include:
 🚀 Installation & Usage
 -----------------------
 
-1. Flash the provided firmware to the ESP32-S3 using **ESP-IDF** or **Arduino IDE** 💾.
+1. Flash the firmware to ESP32-S3 using **Arduino IDE** or **PlatformIO** 💾
     
-2. Connect the sensors and display according to the wiring diagram 🔌.
+2. Connect sensors and display according to the wiring diagram 🔌
     
-3. Power on the device 🔋.
+3. Power on the device 🔋
     
-4. Access the local web server via Wi-Fi 🌐 to view real-time sensor data.
+4. Access the **web dashboard** via Wi-Fi 🌐 to view sensor data in real-time
     
-5. Interact with the TFT touchscreen to navigate the local display interface 🖲️.
-    
-
-* * *
-
-✨ Optional Enhancements
------------------------
-
-* Historical data logging to an SD card or external server 🗄️.
-    
-* Graphical representation of trends for temperature, humidity, pressure, and UV index 📈.
-    
-* Configurable alerts for high UV levels ☀️, extreme temperatures 🌡️, or poor air quality 🌫️.
-    
-* Integration with home automation systems like Home Assistant or MQTT 🏠.
+5. Use the touchscreen to navigate local measurements 🖲️
     
 
 * * *
@@ -106,11 +98,18 @@ The ESP32-S3 creates a local web server, accessible via Wi-Fi. Features include:
 📜 License
 ----------
 
-This project is provided **as-is** under the MIT License 📝.
+This project is licensed under the **MIT License** and was developed as an educational project. You are free to use, modify, and distribute the code and schematics as long as you credit the author:
+
+**Copyright (c) 2025 Daniel Sichler aka Darexsh**
+
+Please include the following notice with any use or distribution:
+
+> Developed by Daniel Sichler aka Darexsh. Licensed under the MIT License. See `LICENSE` for details.
+
+The full license is available in the [LICENSE](LICENSE) file.
 
 * * *
 
-<!-- Keep this line! Rendered picture of PCB is going to be displayed after Production files are pushed to branch! -->
-![](./Docs/board_preview_top_2025-09-12_fc06468.png)
-![](./Docs/board_preview_bottom_2025-09-12_fc06468.png)
-![](./Docs/Case.png)
+<div align="center"> <sub>Created with ❤️ by Daniel Sichler</sub> </div>
+
+* * *
