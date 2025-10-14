@@ -24,5 +24,8 @@ void drawLogo();
 void drawBox(int);
 void updateValues();
 void updateValue(int);
+void drawDetailPage(int);
+void drawDetailPageWithSprite(int);
+void drawDetailPageTitle(int);
 
 #endif // METHODS_H

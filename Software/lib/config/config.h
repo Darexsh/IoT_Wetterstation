@@ -31,7 +31,7 @@
 #define NUM_BOXES 8     // Number of boxes
 
 // Layout colors
-#define COLOR_BACKGROUND 0xAAAAAA // Light gray background
+#define COLOR_BACKGROUND 0xAD55 // Light gray background
 #define BOX_COLOR TFT_WHITE       // White boxes
 #define TITLE_COLOR TFT_BLACK     // Black titles
 #define VALUE_COLOR TFT_BLACK     // Black values
