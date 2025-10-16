@@ -1,3 +1,16 @@
+/**
+ * @file methods.cpp
+ * @brief Implementation of functions for managing display boxes, sensor updates, and detail pages
+ *
+ * This file contains the implementation of:
+ * - Sensor configuration (BME680, LTR390, VCNL4040)
+ * - Layout and drawing of boxes on the main screen
+ * - Updating sensor values (real or dummy)
+ * - Display backlight control based on ambient light and proximity
+ * - Detail page rendering with TFT sprites for smooth updates
+ */
+
+
 #include <methods.h>
 
 extern TFT_eSPI tft;            ///< TFT object
@@ -33,7 +46,6 @@ Box boxes[NUM_BOXES] = {
  * @brief Configure all sensors (BME680, LTR390, VCNL4040) with desired parameters
  */
 void configureSensors() {
-#ifdef REAL_SENSORS
   // LTR390 UV sensor configuration
   ltr.setMode(LTR390_MODE_UVS);
   ltr.setGain(LTR390_GAIN_18);
@@ -56,7 +68,6 @@ void configureSensors() {
   bme.setIIRFilterSize(BME68X_FILTER_SIZE_3);
   bme.setODR(BME68X_ODR_NONE);
   bme.setGasHeater(HEATER_TEMP, HEATER_DURATION);
-#endif
 }
 
 /**

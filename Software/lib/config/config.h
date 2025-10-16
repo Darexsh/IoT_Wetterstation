@@ -2,8 +2,14 @@
  * @file config.h
  * @brief Configuration and pin definitions for TFT display, touch, sensors, and layout
  *
- * Contains pin assignments, screen dimensions, layout parameters,
- * sensor settings, and backlight control parameters.
+ * This file contains all configuration constants and pin assignments for:
+ * - TFT display
+ * - Touchscreen
+ * - Sensor modules (BME680, LTR390, VCNL4040)
+ * - Layout and positioning of boxes
+ * - Display backlight and brightness control
+ *
+ * The settings here control both hardware connections and UI layout parameters.
  */
 
 #ifndef CONFIG_H
@@ -12,7 +18,7 @@
 #include <TFT_eSPI.h>
 
 /// Uncomment to use real sensors instead of simulated data
-#define REAL_SENSORS
+// #define REAL_SENSORS
 
 /// I2C pins for sensor communication
 #define SDA 38 ///< I2C data line

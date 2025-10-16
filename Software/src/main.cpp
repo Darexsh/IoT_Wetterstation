@@ -65,10 +65,10 @@ void setup() {
   if (!bme.begin()) Serial.println("BME688 not found");
   if (!vcnl.begin()) Serial.println("VCNL4040 not found");
   if (!ltr.begin()) Serial.println("LTR390 not found");
-#endif
 
   ///< Configure sensor parameters
   configureSensors();
+#endif
 
   ///< Initialize TFT display
   tft.begin();

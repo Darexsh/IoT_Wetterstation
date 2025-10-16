@@ -1,3 +1,15 @@
+/**
+ * @file methods.h
+ * @brief Functions for managing display boxes, sensor updates, and detail pages
+ *
+ * Contains:
+ * - Box structure definition
+ * - Sensor configuration
+ * - Functions for layout and drawing of boxes
+ * - Updating sensor values and the display
+ * - Drawing detail pages for individual sensors
+ */
+
 #ifndef METHODS_H
 #define METHODS_H
 
