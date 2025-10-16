@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @brief Main file for the environmental sensor dashboard
+ *
+ * Reads data from BME680, LTR390, and VCNL4040 sensors and displays
+ * values on a TFT screen. Handles touch input to switch between main
+ * and detail pages. Implements automatic display brightness adjustment
+ * based on ambient light and hand proximity.
+ */
+
 #include <Adafruit_BME680.h>
 #include <Adafruit_LTR390.h>
 #include <Adafruit_VCNL4040.h>
@@ -9,81 +19,105 @@
 #include <logo.h>
 #include <methods.h>
 
-TFT_eSPI tft = TFT_eSPI(); ///< TFT display object
-TFT_Touch touch(TOUCH_CS, TOUCH_CLK, TOUCH_DIN, TOUCH_DOUT); ///< Touchscreen object
+/// TFT display instance
+TFT_eSPI tft = TFT_eSPI();
 
-extern Box boxes[]; ///< Array of display boxes
-int currentPage = 0;   ///< Current page: 0 = main page, 1 = detail page
-int selectedBox = -1;  ///< Index of the selected box, -1 = no box selected
-bool touchReleased = true; ///< Helper variable for touch debounce
-float lastDetailValue = -9999;  ///< Last detail value, used to force redraw
+/// Touch controller instance
+TFT_Touch touch(TOUCH_CS, TOUCH_CLK, TOUCH_DIN, TOUCH_DOUT);
 
-Adafruit_BME680 bme; ///< BME680 sensor
-Adafruit_LTR390 ltr; ///< LTR390 sensor (UV)
-Adafruit_VCNL4040 vcnl; ///< VCNL4040 sensor (ambient light & proximity)
+/// External array of boxes for main screen
+extern Box boxes[];
+
+/// Current page: 0 = main, 1 = detail
+int currentPage = 0;
+
+/// Index of selected box (-1 if none)
+int selectedBox = -1;
+
+/// Flag to detect touch release
+bool touchReleased = true;
+
+/// Last value drawn on detail page to avoid flicker
+float lastDetailValue = -9999;
+
+/// Sensor instances
+Adafruit_BME680 bme;
+Adafruit_LTR390 ltr;
+Adafruit_VCNL4040 vcnl;
 
 /**
- * @brief Setup function, initializes hardware, sensors, and display
+ * @brief Arduino setup function
+ *
+ * Initializes serial, sensors, display, touch, and draws initial layout.
  */
 void setup() {
   Serial.begin(115200);
 
-  pinMode(LED_PWM, OUTPUT); ///< PWM pin for backlight
-  analogWrite(LED_PWM, 255);  ///< Turn backlight fully on
+  ///< Configure backlight pin and set full brightness initially
+  pinMode(LED_PWM, OUTPUT);
+  analogWrite(LED_PWM, 255);  ///< Full backlight on
 
 #ifdef REAL_SENSORS
-  Wire.begin(SDA, SCL); ///< Initialize I2C
+  ///< Initialize I2C bus
+  Wire.begin(SDA, SCL);
 
-  if (!bme.begin())
-    Serial.println("BME688 not found");
-  if (!vcnl.begin())
-    Serial.println("VCNL4040 not found");
-  if (!ltr.begin())
-    Serial.println("LTR390 not found");
+  ///< Initialize sensors
+  if (!bme.begin()) Serial.println("BME688 not found");
+  if (!vcnl.begin()) Serial.println("VCNL4040 not found");
+  if (!ltr.begin()) Serial.println("LTR390 not found");
 #endif
 
-  configureSensors(); ///< Configure sensors
+  ///< Configure sensor parameters
+  configureSensors();
 
+  ///< Initialize TFT display
   tft.begin();
   tft.setRotation(1);
 
+  ///< Initialize touch controller
   touch.setRotation(1);
-  touch.setCal(XMIN, XMAX, YMIN, YMAX, SCREEN_W, SCREEN_H, false); ///< Calibrate touch
+  touch.setCal(XMIN, XMAX, YMIN, YMAX, SCREEN_W, SCREEN_H, false);
 
-  tft.fillScreen(COLOR_BACKGROUND); ///< Set background color
-
-  layoutBoxes(); ///< Layout the display boxes
-  drawLogo(); ///< Draw the logo
+  ///< Clear screen and draw initial layout
+  tft.fillScreen(COLOR_BACKGROUND);
+  layoutBoxes();
+  drawLogo();
   for (int i = 0; i < NUM_BOXES; i++) {
-    drawBox(i); ///< Draw each box
+    drawBox(i);
   }
 }
 
 /**
- * @brief Main loop function, updates sensor values, display, and handles touch input
+ * @brief Arduino main loop
+ *
+ * Updates sensor values, draws main and detail pages, handles touch
+ * input, and manages display brightness based on ambient light and
+ * hand proximity.
  */
 void loop() {
-  updateValues(); ///< Update sensor or dummy values
+  ///< Update all sensor values
+  updateValues();
 
   if (currentPage == 0) {
-    ///< Main page – update all box values
+    ///< Main page – update all boxes
     for (int i = 0; i < NUM_BOXES; i++) {
-      updateValue(i); ///< Update individual box value
+      updateValue(i);
     }
 
-    ///< Handle touch input for box selection
+    ///< Detect touch to select box
     if (touch.Pressed() && touchReleased) {
       touchReleased = false;
       int tx = touch.X();
       int ty = touch.Y();
 
+      ///< Check which box is touched
       for (int i = 0; i < NUM_BOXES; i++) {
         if (tx > boxes[i].x && tx < boxes[i].x + boxes[i].w &&
             ty > boxes[i].y && ty < boxes[i].y + boxes[i].h) {
           selectedBox = i;
           currentPage = 1;
-          lastDetailValue = -9999; ///< Reset last value to force redraw
-          drawDetailPageTitle(selectedBox); ///< Draw title immediately
+          lastDetailValue = -9999;           ///< Force redraw
+          drawDetailPageTitle(selectedBox);  ///< Draw title immediately
           break;
         }
       }
@@ -91,19 +125,20 @@ void loop() {
     if (!touch.Pressed())
       touchReleased = true;
   } else if (currentPage == 1 && selectedBox >= 0) {
-    ///< Detail page – update detail value with sprite
+    ///< Detail page – update value using sprite
     drawDetailPageWithSprite(selectedBox);
 
-    ///< Handle touch to go back
+    ///< Detect touch to return to main page
     if (touch.Pressed() && touchReleased) {
       touchReleased = false;
       currentPage = 0;
       selectedBox = -1;
-      tft.fillScreen(COLOR_BACKGROUND); ///< Clear screen
+
+      ///< Redraw main screen layout
+      tft.fillScreen(COLOR_BACKGROUND);
       layoutBoxes();
       drawLogo();
-      for (int i = 0; i < NUM_BOXES; i++)
-        drawBox(i);
+      for (int i = 0; i < NUM_BOXES; i++) drawBox(i);
     }
     if (!touch.Pressed())
       touchReleased = true;

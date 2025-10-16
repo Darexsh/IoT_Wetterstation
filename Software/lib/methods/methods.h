@@ -9,67 +9,67 @@
 #include <logo.h>
 
 /**
- * @brief Structure representing a display box
+ * @brief Structure representing a single box on the display
  */
 struct Box {
-  const char* title;  ///< Title of the box
-  float* value;       ///< Pointer to the value displayed in the box
-  const char* unit;   ///< Unit of the value (e.g., "°C", "%")
-  int x, y;           ///< Position of the box on screen
-  int w, h;           ///< Width and height of the box
-  int decimals;       ///< Number of decimal places to display
+  const char* title;  ///< Box title
+  float* value;       ///< Pointer to sensor value displayed
+  const char* unit;   ///< Unit of measurement
+  int x, y;           ///< Position on screen
+  int w, h;           ///< Width and height of box
+  int decimals;       ///< Number of decimals for display
 };
 
-extern Box boxes[NUM_BOXES]; ///< Array of all boxes on the display
+extern Box boxes[NUM_BOXES];  ///< Array of boxes on screen
 
 /**
- * @brief Configure sensors (BME680, LTR390, VCNL4040)
+ * @brief Configure all sensors with default settings
  */
 void configureSensors();
 
 /**
- * @brief Layout the boxes on the main display
+ * @brief Layout boxes on screen in grid
  */
 void layoutBoxes();
 
 /**
- * @brief Draw the logo on the display
+ * @brief Draw the center logo
  */
 void drawLogo();
 
 /**
  * @brief Draw a single box
- * @param index Index of the box in the boxes array
+ * @param i Index of box in boxes array
  */
-void drawBox(int index);
+void drawBox(int i);
 
 /**
- * @brief Update all sensor or dummy values
+ * @brief Update all sensor values
  */
 void updateValues();
 
 /**
- * @brief Update a single box's value on the display
- * @param index Index of the box in the boxes array
+ * @brief Update a single box value if changed
+ * @param i Index of box
  */
-void updateValue(int index);
+void updateValue(int i);
 
 /**
- * @brief Draw the detail page for a selected box
- * @param index Index of the box in the boxes array
+ * @brief Draw the detail page for a box
+ * @param boxIndex Index of box
  */
-void drawDetailPage(int index);
+void drawDetailPage(int boxIndex);
 
 /**
- * @brief Draw the detail page with a sprite (graphical representation)
- * @param index Index of the box in the boxes array
+ * @brief Draw the detail page using a sprite for the value
+ * @param boxIndex Index of box
  */
-void drawDetailPageWithSprite(int index);
+void drawDetailPageWithSprite(int boxIndex);
 
 /**
- * @brief Draw only the title of the detail page for a selected box
- * @param index Index of the box in the boxes array
+ * @brief Draw the detail page title
+ * @param boxIndex Index of box
  */
-void drawDetailPageTitle(int index);
+void drawDetailPageTitle(int boxIndex);
 
 #endif  // METHODS_H

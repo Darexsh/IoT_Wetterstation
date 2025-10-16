@@ -1,30 +1,38 @@
+/**
+ * @file config.h
+ * @brief Configuration and pin definitions for TFT display, touch, sensors, and layout
+ *
+ * Contains pin assignments, screen dimensions, layout parameters,
+ * sensor settings, and backlight control parameters.
+ */
+
 #ifndef CONFIG_H
 #define CONFIG_H
 
 #include <TFT_eSPI.h>
 
-// Uncomment the following line to use real sensors instead of simulated data
+/// Uncomment to use real sensors instead of simulated data
 #define REAL_SENSORS
 
-// I2C pins
-#define SDA 38
-#define SCL 37
+/// I2C pins for sensor communication
+#define SDA 38 ///< I2C data line
+#define SCL 37 ///< I2C clock line
 
-// Touchscreen pins
-#define TOUCH_DIN 7
-#define TOUCH_DOUT 6
-#define TOUCH_CS 15
-#define TOUCH_CLK 16
-#define TOUCH_IRQ 5
+/// Touchscreen pins
+#define TOUCH_DIN 7   ///< SPI DIN
+#define TOUCH_DOUT 6  ///< SPI DOUT
+#define TOUCH_CS 15   ///< Chip select
+#define TOUCH_CLK 16  ///< SPI clock
+#define TOUCH_IRQ 5   ///< Interrupt pin (not used here)
 
-// TFT pins
+/// TFT display pins
 #define TFT_RD 35
 #define TFT_WR 21
 #define TFT_RS 14
 #define TFT_REST 1
 #define TFT_CS 2
 
-// TFT data pins
+/// TFT parallel data pins
 #define TFT_D0 13
 #define TFT_D1 12
 #define TFT_D2 11
@@ -34,46 +42,46 @@
 #define TFT_D6 18
 #define TFT_D7 17
 
-// LED pin (for backlight control)
+/// LED pin for backlight control
 #define LED_PWM 4
 
-// Screen dimensions
-#define SCREEN_W 800  // Screen width in pixels
-#define SCREEN_H 480  // Screen height in pixels
+/// Screen dimensions in pixels
+#define SCREEN_W 800 ///< Screen width
+#define SCREEN_H 480 ///< Screen height
 
-// Layout constants
-#define MARGIN 20        // Margin around the screen
-#define SPACING_X 20     // Horizontal spacing
-#define SPACING_Y 20     // Vertical spacing
-#define NUM_COLS 3       // Adjusted to fit 3 columns
-#define NUM_ROWS 3       // Adjusted to fit 3 rows
-#define LOGO_WIDTH 120   // Logo width
-#define LOGO_HEIGHT 120  // Logo height
-#define BOX_RADIUS 10    // Corner radius for rounded rectangles
-#define NUM_BOXES 8      // Number of boxes
+/// Layout constants for main screen boxes
+#define MARGIN 20        ///< Margin around the screen
+#define SPACING_X 20     ///< Horizontal spacing between boxes
+#define SPACING_Y 20     ///< Vertical spacing between boxes
+#define NUM_COLS 3       ///< Number of columns in grid
+#define NUM_ROWS 3       ///< Number of rows in grid
+#define LOGO_WIDTH 120   ///< Logo width in pixels
+#define LOGO_HEIGHT 120  ///< Logo height in pixels
+#define BOX_RADIUS 10    ///< Corner radius for rounded rectangles
+#define NUM_BOXES 8      ///< Total number of boxes on main screen
 
-// Layout colors
-#define COLOR_BACKGROUND 0xAD55  // Light gray background
-#define BOX_COLOR TFT_WHITE      // White boxes
-#define TITLE_COLOR TFT_BLACK    // Black titles
-#define VALUE_COLOR TFT_BLACK    // Black values
+/// Colors for layout
+#define COLOR_BACKGROUND 0xAD55 ///< Light gray background color
+#define BOX_COLOR TFT_WHITE     ///< Box background color
+#define TITLE_COLOR TFT_BLACK   ///< Box title text color
+#define VALUE_COLOR TFT_BLACK   ///< Box value text color
 
-// Touchscreen calibration values
-#define XMIN 610
-#define XMAX 3190
-#define YMIN 1070
-#define YMAX 3180
+/// Touchscreen calibration values
+#define XMIN 610  ///< Minimum X value from touchscreen
+#define XMAX 3190 ///< Maximum X value
+#define YMIN 1070 ///< Minimum Y value
+#define YMAX 3180 ///< Maximum Y value
 
-// BME688 settings
-#define HEATER_TEMP 320
-#define HEATER_DURATION 150
+/// BME688 sensor heater settings
+#define HEATER_TEMP 320     ///< Heater temperature in Celsius
+#define HEATER_DURATION 150 ///< Heater duration in milliseconds
 
-// Proximity threshold to detect hand near the sensor
+/// Proximity sensor threshold for detecting a hand near the display
 #define HAND_NEAR_TRESHOLD 500
 
-// PWM brightness control
-#define MAX_AMBIENT_LIGHT 5000
-#define MIN_PWM 50
-#define MAX_PWM 200
+/// PWM brightness control for display backlight
+#define MAX_AMBIENT_LIGHT 5000 ///< Maximum ambient light considered
+#define MIN_PWM 50             ///< Minimum PWM value for backlight
+#define MAX_PWM 200            ///< Maximum PWM value for backlight
 
 #endif  // CONFIG_H
