@@ -37,7 +37,7 @@ extern Box boxes[NUM_BOXES];  ///< Array of boxes on screen
 /**
  * @brief Configure all sensors with default settings
  */
-void configureSensors();
+void configureSensors(bool bme_ok, bool vcnl_ok, bool ltr_ok);
 
 /**
  * @brief Layout boxes on screen in grid

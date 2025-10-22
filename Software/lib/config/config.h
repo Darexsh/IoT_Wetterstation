@@ -18,7 +18,7 @@
 #include <TFT_eSPI.h>
 
 /// Uncomment to use real sensors instead of simulated data
-// #define REAL_SENSORS
+#define REAL_SENSORS
 
 /// I2C pins for sensor communication
 #define SDA 38 ///< I2C data line

@@ -17,19 +17,36 @@ extern TFT_eSPI tft;            ///< TFT object
 extern Adafruit_BME680 bme;     ///< BME680 sensor
 extern Adafruit_LTR390 ltr;     ///< LTR390 sensor
 extern Adafruit_VCNL4040 vcnl;  ///< VCNL4040 sensor
+extern bool bme_ok;
+extern bool vcnl_ok;
+extern bool ltr_ok;
 
 /// Dummy sensor values for testing
-float tempValue = 23.5;
-float humidValue = 45.2;
-float pressureValue = 1012.0;
-float gasValue = 120.0;
-float distanceValue = 150.0;
-float ambientValue = 500.0;
-float whiteValue = 800.0;
-float uvValue = 0.8;
-float uvIndexValue = 2.0;
-float proximityValue = 300.0;
-extern float lastDetailValue;  ///< Last detail page value
+// float tempValue = 23.5;
+// float humidValue = 45.2;
+// float pressureValue = 1012.0;
+// float gasValue = 120.0;
+// float distanceValue = 150.0;
+// float ambientValue = 500.0;
+// float whiteValue = 800.0;
+// float uvValue = 0.8;
+// float uvIndexValue = 2.0;
+// float proximityValue = 300.0;
+
+/// Sensor values for testing
+float tempValue = 0.0;
+float humidValue = 0.0;
+float pressureValue = 0.0;
+float gasValue = 0.0;
+float distanceValue = 0.0;
+float ambientValue = 0.0;
+float whiteValue = 0.0;
+float uvValue = 0.0;
+float uvIndexValue = 0.0;
+float proximityValue = 0.0;
+
+/// Last detail page value
+extern float lastDetailValue;  
 
 /// Array of boxes displayed on screen
 Box boxes[NUM_BOXES] = {
@@ -45,29 +62,32 @@ Box boxes[NUM_BOXES] = {
 /**
  * @brief Configure all sensors (BME680, LTR390, VCNL4040) with desired parameters
  */
-void configureSensors() {
-  // LTR390 UV sensor configuration
-  ltr.setMode(LTR390_MODE_UVS);
-  ltr.setGain(LTR390_GAIN_18);
-  ltr.setResolution(LTR390_RESOLUTION_20BIT);
+void configureSensors(bool bme_ok, bool vcnl_ok, bool ltr_ok) {
+  if (ltr_ok) {
+    ltr.setMode(LTR390_MODE_UVS);
+    ltr.setGain(LTR390_GAIN_18);
+    ltr.setResolution(LTR390_RESOLUTION_20BIT);
+  }
 
-  // VCNL4040 proximity and ambient light configuration
-  vcnl.enableAmbientLight(true);
-  vcnl.enableProximity(true);
-  vcnl.enableWhiteLight(true);
-  vcnl.setProximityHighResolution(true);
-  vcnl.setProximityIntegrationTime(VCNL4040_PROXIMITY_INTEGRATION_TIME_8T);
-  vcnl.setAmbientIntegrationTime(VCNL4040_AMBIENT_INTEGRATION_TIME_80MS);
-  vcnl.setProximityLEDCurrent(VCNL4040_LED_CURRENT_75MA);
-  vcnl.setProximityLEDDutyCycle(VCNL4040_LED_DUTY_1_80);
+  if (vcnl_ok) {
+    vcnl.enableAmbientLight(true);
+    vcnl.enableProximity(true);
+    vcnl.enableWhiteLight(true);
+    vcnl.setProximityHighResolution(true);
+    vcnl.setProximityIntegrationTime(VCNL4040_PROXIMITY_INTEGRATION_TIME_8T);
+    vcnl.setAmbientIntegrationTime(VCNL4040_AMBIENT_INTEGRATION_TIME_80MS);
+    vcnl.setProximityLEDCurrent(VCNL4040_LED_CURRENT_75MA);
+    vcnl.setProximityLEDDutyCycle(VCNL4040_LED_DUTY_1_80);
+  }
 
-  // BME680 configuration
-  bme.setTemperatureOversampling(BME68X_OS_8X);
-  bme.setPressureOversampling(BME68X_OS_4X);
-  bme.setHumidityOversampling(BME68X_OS_2X);
-  bme.setIIRFilterSize(BME68X_FILTER_SIZE_3);
-  bme.setODR(BME68X_ODR_NONE);
-  bme.setGasHeater(HEATER_TEMP, HEATER_DURATION);
+  if (bme_ok) {
+    bme.setTemperatureOversampling(BME68X_OS_8X);
+    bme.setPressureOversampling(BME68X_OS_4X);
+    bme.setHumidityOversampling(BME68X_OS_2X);
+    bme.setIIRFilterSize(BME68X_FILTER_SIZE_3);
+    bme.setODR(BME68X_ODR_NONE);
+    bme.setGasHeater(HEATER_TEMP, HEATER_DURATION);
+  }
 }
 
 /**
@@ -136,7 +156,7 @@ void updateValues() {
 
 #ifdef REAL_SENSORS
   // Read BME680 sensor values
-  if (bme.performReading()) {
+  if (bme_ok && bme.performReading()) {
     tempValue = bme.temperature;
     humidValue = bme.humidity;
     pressureValue = bme.pressure / 100.0F;
@@ -144,24 +164,28 @@ void updateValues() {
   }
 
   // Read VCNL4040 sensor values
-  ambientValue = vcnl.getAmbientLight();
-  whiteValue = vcnl.getWhiteLight();
-  proximityValue = vcnl.getProximity();
-
-  // Set display backlight: full brightness if hand near, else adaptive brightness
-  if (proximityValue > HAND_NEAR_TRESHOLD) {
-    analogWrite(LED_PWM, 255);  ///< Full brightness
-  } else {
-    uint8_t brightness = map(constrain(ambientValue, 0, MAX_AMBIENT_LIGHT),
-                             0, MAX_AMBIENT_LIGHT, MIN_PWM, MAX_PWM);
-    analogWrite(LED_PWM, brightness);  ///< Adaptive brightness
+  if (vcnl_ok) {
+    ambientValue = vcnl.getAmbientLight();
+    whiteValue = vcnl.getWhiteLight();
+    proximityValue = vcnl.getProximity();
   }
 
+  // Set display backlight: full brightness if hand near, else adaptive brightness
+  // if (proximityValue > HAND_NEAR_TRESHOLD) {
+  //   analogWrite(LED_PWM, 255);  ///< Full brightness
+  // } else {
+  //   uint8_t brightness = map(constrain(ambientValue, 0, MAX_AMBIENT_LIGHT),
+  //                            0, MAX_AMBIENT_LIGHT, MIN_PWM, MAX_PWM);
+  //   analogWrite(LED_PWM, brightness);  ///< Adaptive brightness
+  // }
+
   // Read LTR390 UV sensor and calculate UV Index
-  uvValue = ltr.readUVS();
-  float uv_mW_per_cm2 = (float)uvValue / 1048575.0 * 15.0;  ///< Convert raw value to mW/cm^2
-  uvIndexValue = uv_mW_per_cm2 / 0.25;                      ///< 1 UV Index = 0.25 mW/cm^2
-  if (uvIndexValue > 11.0) uvIndexValue = 11.0;             ///< Limit UV Index to 11
+  if (ltr_ok) {
+    uvValue = ltr.readUVS();
+    float uv_mW_per_cm2 = (float)uvValue / 1048575.0 * 15.0;
+    uvIndexValue = uv_mW_per_cm2 / 0.25;
+    if (uvIndexValue > 11.0) uvIndexValue = 11.0;
+  }
 #else
   // Dummy values for testing
   tempValue = constrain(tempValue + random(-2, 3) / 10.0, -20, 50);
@@ -251,7 +275,7 @@ void drawDetailPage(int boxIndex) {
 
   ///< Hint text
   tft.setFreeFont(&FreeSans9pt7b);
-  tft.drawString("Tippe zum Zurueckkehren", SCREEN_W / 2, SCREEN_H - 40, 1);
+  tft.drawString("Tippen, um zur Hauptseite zu gelangen", SCREEN_W / 2, SCREEN_H - 40, 1);
 }
 
 /**
@@ -326,5 +350,5 @@ void drawDetailPageTitle(int boxIndex) {
   tft.drawString(title, SCREEN_W / 2, SCREEN_H / 2 - 40, 1);
 
   tft.setFreeFont(&FreeSans9pt7b);
-  tft.drawString("Tippe zum Zurueckkehren", SCREEN_W / 2, SCREEN_H - 40, 1);
+  tft.drawString("Tippen, um zur Hauptseite zu gelangen", SCREEN_W / 2, SCREEN_H - 40, 1);
 }

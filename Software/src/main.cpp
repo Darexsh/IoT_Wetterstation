@@ -40,6 +40,11 @@ bool touchReleased = true;
 /// Last value drawn on detail page to avoid flicker
 float lastDetailValue = -9999;
 
+/// Sensor availability flags
+bool bme_ok = false;
+bool vcnl_ok = false;
+bool ltr_ok = false;
+
 /// Sensor instances
 Adafruit_BME680 bme;
 Adafruit_LTR390 ltr;
@@ -58,16 +63,22 @@ void setup() {
   analogWrite(LED_PWM, 255);  ///< Full backlight on
 
 #ifdef REAL_SENSORS
-  ///< Initialize I2C bus
   Wire.begin(SDA, SCL);
 
-  ///< Initialize sensors
-  if (!bme.begin()) Serial.println("BME688 not found");
-  if (!vcnl.begin()) Serial.println("VCNL4040 not found");
-  if (!ltr.begin()) Serial.println("LTR390 not found");
+  bme_ok = bme.begin(0x76);
+  if (!bme_ok) Serial.println("BME688 not found");
 
-  ///< Configure sensor parameters
-  configureSensors();
+  vcnl_ok = vcnl.begin();
+  if (!vcnl_ok) Serial.println("VCNL4040 not found");
+
+  ltr_ok = ltr.begin();  // Default address 0x53
+  if (!ltr_ok) Serial.println("LTR390 not found");
+
+  if (bme_ok || vcnl_ok || ltr_ok) {
+    configureSensors(bme_ok, vcnl_ok, ltr_ok);
+  } else {
+    Serial.println("⚠️ No sensors initialized, running demo mode");
+  }
 #endif
 
   ///< Initialize TFT display
