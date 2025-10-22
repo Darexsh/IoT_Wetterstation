@@ -696,7 +696,7 @@
 	)
 	(hierarchical_label "SCL"
 		(shape input)
-		(at 154.305 111.125 0)
+		(at 154.305 108.585 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -707,7 +707,7 @@
 	)
 	(hierarchical_label "SDA"
 		(shape input)
-		(at 154.305 108.585 0)
+		(at 154.305 111.125 0)
 		(effects
 			(font
 				(size 1.27 1.27)
