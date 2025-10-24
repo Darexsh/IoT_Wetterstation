@@ -84,4 +84,13 @@ void drawDetailPageWithSprite(int boxIndex);
  */
 void drawDetailPageTitle(int boxIndex);
 
+/**
+ * @brief Update history buffer for a box
+ * @param boxIndex Index of box
+ * @param newValue New sensor value to add to history
+ */
+void updateHistory(int boxIndex, float newValue);
+
+void initHistory();
+
 #endif  // METHODS_H

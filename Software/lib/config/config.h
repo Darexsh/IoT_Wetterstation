@@ -90,4 +90,12 @@
 #define MIN_PWM 50             ///< Minimum PWM value for backlight
 #define MAX_PWM 200            ///< Maximum PWM value for backlight
 
+/// Graph display settings
+#define FAST_UPDATE_INTERVAL 500  ///< Fast update interval in milliseconds
+#define HISTORY_UPDATE_INTERVAL 120000 ///< History update interval (2 minutes) in milliseconds
+#define HISTORY_LENGTH 720   ///< 24 hours of data at 2-minute intervals (24h * 60min / 2min)
+#define GRAPH_HEIGHT 210    ///< Height of graph area in pixels
+#define GRAPH_WIDTH 720     ///< Width of graph area in pixels
+#define GRAPH_COLOR TFT_RED ///< Color for graph lines
+
 #endif  // CONFIG_H

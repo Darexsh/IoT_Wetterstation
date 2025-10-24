@@ -1,11 +1,7 @@
 /**
  * @file main.cpp
  * @brief Main file for the environmental sensor dashboard
- *
- * Reads data from BME680, LTR390, and VCNL4040 sensors and displays
- * values on a TFT screen. Handles touch input to switch between main
- * and detail pages. Implements automatic display brightness adjustment
- * based on ambient light and hand proximity.
+ * ...
  */
 
 #include <Adafruit_BME680.h>
@@ -39,6 +35,7 @@ bool touchReleased = true;
 
 /// Last value drawn on detail page to avoid flicker
 float lastDetailValue = -9999;
+extern bool detailGraphNeedsRedraw;
 
 /// Sensor availability flags
 bool bme_ok = false;
@@ -52,15 +49,14 @@ Adafruit_VCNL4040 vcnl;
 
 /**
  * @brief Arduino setup function
- *
- * Initializes serial, sensors, display, touch, and draws initial layout.
+ * ...
  */
 void setup() {
   Serial.begin(115200);
 
   ///< Configure backlight pin and set full brightness initially
   pinMode(LED_PWM, OUTPUT);
-  analogWrite(LED_PWM, 255);  ///< Full backlight on
+  analogWrite(LED_PWM, 100);  ///< Full backlight on
 
 #ifdef REAL_SENSORS
   Wire.begin(SDA, SCL);
@@ -71,15 +67,25 @@ void setup() {
   vcnl_ok = vcnl.begin();
   if (!vcnl_ok) Serial.println("VCNL4040 not found");
 
-  ltr_ok = ltr.begin();  // Default address 0x53
+  ltr_ok = ltr.begin();
+  // Default address 0x53
   if (!ltr_ok) Serial.println("LTR390 not found");
 
   if (bme_ok || vcnl_ok || ltr_ok) {
     configureSensors(bme_ok, vcnl_ok, ltr_ok);
   } else {
-    Serial.println("⚠️ No sensors initialized, running demo mode");
+    Serial.println("No sensors initialized, running demo mode");
   }
 #endif
+
+  // WICHTIG: Ringpuffer vollständig initialisieren!
+  initHistory();
+  updateValues();  // Initiale Werte lesen
+
+  for (int i = 0; i < NUM_BOXES; i++) {
+      updateHistory(i, *boxes[i].value);
+  }
+  detailGraphNeedsRedraw = true; // Graph sofort zum Zeichnen markieren
 
   ///< Initialize TFT display
   tft.begin();
@@ -100,10 +106,7 @@ void setup() {
 
 /**
  * @brief Arduino main loop
- *
- * Updates sensor values, draws main and detail pages, handles touch
- * input, and manages display brightness based on ambient light and
- * hand proximity.
+ * ...
  */
 void loop() {
   ///< Update all sensor values
@@ -127,8 +130,9 @@ void loop() {
             ty > boxes[i].y && ty < boxes[i].y + boxes[i].h) {
           selectedBox = i;
           currentPage = 1;
-          lastDetailValue = -9999;           ///< Force redraw
-          drawDetailPageTitle(selectedBox);  ///< Draw title immediately
+          lastDetailValue = -9999;
+          detailGraphNeedsRedraw = true;
+          drawDetailPageTitle(selectedBox);
           break;
         }
       }
@@ -144,6 +148,7 @@ void loop() {
       touchReleased = false;
       currentPage = 0;
       selectedBox = -1;
+      detailGraphNeedsRedraw = false;
 
       ///< Redraw main screen layout
       tft.fillScreen(COLOR_BACKGROUND);
