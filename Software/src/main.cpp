@@ -1,7 +1,10 @@
 /**
  * @file main.cpp
- * @brief Main file for the environmental sensor dashboard
- * ...
+ * @brief Main program for ESP32-S3 weather station with TFT display and touch
+ *
+ * This program initializes the TFT display, touch controller, and sensors,
+ * and manages the main loop to update sensor readings and handle user
+ * interactions.
  */
 
 #include <Adafruit_BME680.h>
@@ -48,8 +51,7 @@ Adafruit_LTR390 ltr;
 Adafruit_VCNL4040 vcnl;
 
 /**
- * @brief Arduino setup function
- * ...
+ * @brief Setup function to initialize hardware and sensors
  */
 void setup() {
   Serial.begin(115200);
@@ -58,7 +60,6 @@ void setup() {
   pinMode(LED_PWM, OUTPUT);
   analogWrite(LED_PWM, 100);  ///< Full backlight on
 
-#ifdef REAL_SENSORS
   Wire.begin(SDA, SCL);
 
   bme_ok = bme.begin(0x76);
@@ -68,7 +69,6 @@ void setup() {
   if (!vcnl_ok) Serial.println("VCNL4040 not found");
 
   ltr_ok = ltr.begin();
-  // Default address 0x53
   if (!ltr_ok) Serial.println("LTR390 not found");
 
   if (bme_ok || vcnl_ok || ltr_ok) {
@@ -76,47 +76,36 @@ void setup() {
   } else {
     Serial.println("No sensors initialized, running demo mode");
   }
-#endif
 
-  // WICHTIG: Ringpuffer vollständig initialisieren!
+  ///< Initialize history buffers and read initial values
   initHistory();
-  updateValues();  // Initiale Werte lesen
 
-  for (int i = 0; i < NUM_BOXES; i++) {
-      updateHistory(i, *boxes[i].value);
-  }
-  detailGraphNeedsRedraw = true; // Graph sofort zum Zeichnen markieren
+  ///< Perform initial sensor reading
+  updateValues();
 
-  ///< Initialize TFT display
-  tft.begin();
-  tft.setRotation(1);
+  for (int i = 0; i < NUM_BOXES; i++) updateHistory(i, *boxes[i].value);
+  detailGraphNeedsRedraw = true;  // Force initial graph draw
 
-  ///< Initialize touch controller
-  touch.setRotation(1);
-  touch.setCal(XMIN, XMAX, YMIN, YMAX, SCREEN_W, SCREEN_H, false);
+  tft.begin();                                                               ///< Initialize TFT display
+  tft.setRotation(1);                                                        ///< Set display rotation
+  touch.setRotation(1);                                                      ///< Initialize touch controller
+  touch.setCal(XMIN, XMAX, YMIN, YMAX, SCREEN_WIDTH, SCREEN_HEIGHT, false);  ///< Calibrate touch controller
+  tft.fillScreen(COLOR_BACKGROUND);                                          ///< Clear screen and draw initial layout
+  layoutBoxes();                                                             ///< Layout boxes on screen
+  drawLogo();                                                                ///< Draw logo in center
 
-  ///< Clear screen and draw initial layout
-  tft.fillScreen(COLOR_BACKGROUND);
-  layoutBoxes();
-  drawLogo();
-  for (int i = 0; i < NUM_BOXES; i++) {
-    drawBox(i);
-  }
+  for (int i = 0; i < NUM_BOXES; i++) drawBox(i);  ///< Draw all boxes
 }
 
 /**
- * @brief Arduino main loop
- * ...
+ * @brief Main loop to update sensor readings and handle user interaction
  */
 void loop() {
-  ///< Update all sensor values
-  updateValues();
+  updateValues();  ///< Update all sensor values
 
   if (currentPage == 0) {
     ///< Main page – update all boxes
-    for (int i = 0; i < NUM_BOXES; i++) {
-      updateValue(i);
-    }
+    for (int i = 0; i < NUM_BOXES; i++) updateValue(i);
 
     ///< Detect touch to select box
     if (touch.Pressed() && touchReleased) {
@@ -137,11 +126,9 @@ void loop() {
         }
       }
     }
-    if (!touch.Pressed())
-      touchReleased = true;
+    if (!touch.Pressed()) touchReleased = true;
   } else if (currentPage == 1 && selectedBox >= 0) {
-    ///< Detail page – update value using sprite
-    drawDetailPageWithSprite(selectedBox);
+    drawDetailPageWithSprite(selectedBox);  ///< Detail page – update value using sprite
 
     ///< Detect touch to return to main page
     if (touch.Pressed() && touchReleased) {
@@ -156,7 +143,7 @@ void loop() {
       drawLogo();
       for (int i = 0; i < NUM_BOXES; i++) drawBox(i);
     }
-    if (!touch.Pressed())
-      touchReleased = true;
+
+    if (!touch.Pressed()) touchReleased = true;
   }
 }

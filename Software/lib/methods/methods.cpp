@@ -16,23 +16,11 @@ extern TFT_eSPI tft;            ///< TFT object
 extern Adafruit_BME680 bme;     ///< BME680 sensor
 extern Adafruit_LTR390 ltr;     ///< LTR390 sensor
 extern Adafruit_VCNL4040 vcnl;  ///< VCNL4040 sensor
-extern bool bme_ok;
-extern bool vcnl_ok;
-extern bool ltr_ok;
+extern bool bme_ok;             ///< Flag indicating BME680 sensor status
+extern bool vcnl_ok;            ///< Flag indicating VCNL4040 sensor status
+extern bool ltr_ok;             ///< Flag indicating LTR390 sensor status
 
-/// Dummy sensor values for testing
-// float tempValue = 23.5;
-// float humidValue = 45.2;
-// float pressureValue = 1012.0;
-// float gasValue = 120.0;
-// float distanceValue = 150.0;
-// float ambientValue = 500.0;
-// float whiteValue = 800.0;
-// float uvValue = 0.8;
-// float uvIndexValue = 2.0;
-// float proximityValue = 300.0;
-
-/// Sensor values for testing
+///< Sensor value variables
 float tempValue = 0.0;
 float humidValue = 0.0;
 float pressureValue = 0.0;
@@ -44,7 +32,7 @@ float uvValue = 0.0;
 float uvIndexValue = 0.0;
 float proximityValue = 0.0;
 
-/// Last detail page value
+///< Last value drawn on detail page to avoid flicker
 extern float lastDetailValue;
 
 float historyBuffers[NUM_BOXES][HISTORY_LENGTH] = {-999.0};  ///< History buffers for graphs
@@ -97,8 +85,8 @@ void configureSensors(bool bme_ok, bool vcnl_ok, bool ltr_ok) {
  * @brief Layout all boxes on screen in a grid, skipping center for logo
  */
 void layoutBoxes() {
-  int boxW = (SCREEN_W - (2 * MARGIN) - (NUM_COLS - 1) * SPACING_X) / NUM_COLS;
-  int boxH = (SCREEN_H - (2 * MARGIN) - (NUM_ROWS - 1) * SPACING_Y) / NUM_ROWS;
+  int boxW = (SCREEN_WIDTH - (2 * MARGIN) - (NUM_COLS - 1) * SPACING_X) / NUM_COLS;
+  int boxH = (SCREEN_HEIGHT - (2 * MARGIN) - (NUM_ROWS - 1) * SPACING_Y) / NUM_ROWS;
 
   int boxIndex = 0;
 
@@ -110,8 +98,7 @@ void layoutBoxes() {
         boxes[boxIndex].w = boxW;
         boxes[boxIndex].h = boxH;
         boxIndex++;
-        if (boxIndex >= NUM_BOXES)
-          return;
+        if (boxIndex >= NUM_BOXES) return;
       }
     }
   }
@@ -121,8 +108,8 @@ void layoutBoxes() {
  * @brief Draw logo in center box
  */
 void drawLogo() {
-  int boxW = (SCREEN_W - (2 * MARGIN) - (NUM_COLS - 1) * SPACING_X) / NUM_COLS;
-  int boxH = (SCREEN_H - (2 * MARGIN) - (NUM_ROWS - 1) * SPACING_Y) / NUM_ROWS;
+  int boxW = (SCREEN_WIDTH - (2 * MARGIN) - (NUM_COLS - 1) * SPACING_X) / NUM_COLS;
+  int boxH = (SCREEN_HEIGHT - (2 * MARGIN) - (NUM_ROWS - 1) * SPACING_Y) / NUM_ROWS;
   int x = MARGIN + 1 * (boxW + SPACING_X);
   int y = MARGIN + 1 * (boxH + SPACING_Y);
 
@@ -159,24 +146,22 @@ void updateValues() {
   bool doFastUpdate = false;
   bool doHistoryUpdate = false;
 
-  // --- 1. SCHNELLES SENSOR-UPDATE PRÜFEN (für Hauptseite) ---
+  ///< Fast update every FAST_UPDATE_INTERVAL milliseconds
   if (currentTime - lastFastUpdate >= FAST_UPDATE_INTERVAL) {
     lastFastUpdate = currentTime;
     doFastUpdate = true;
   }
 
-  // --- 2. HISTORIE-UPDATE PRÜFEN (nur alle 5 Minuten) ---
+  ///< History update every HISTORY_UPDATE_INTERVAL milliseconds
   if (doFastUpdate && (currentTime - lastHistoryUpdate >= HISTORY_UPDATE_INTERVAL)) {
     lastHistoryUpdate = currentTime;
     doHistoryUpdate = true;
     detailGraphNeedsRedraw = true;
   }
 
-  // --- Wenn KEIN Update nötig ist, Funktion verlassen ---
-  if (!doFastUpdate)
-    return;
+  ///< If no fast update needed, return
+  if (!doFastUpdate) return;
 
-#ifdef REAL_SENSORS
   // Read BME680 sensor values
   if (bme_ok && bme.performReading()) {
     tempValue = bme.temperature;
@@ -199,20 +184,8 @@ void updateValues() {
     uvIndexValue = uv_mW_per_cm2 / 0.25;
     if (uvIndexValue > 11.0) uvIndexValue = 11.0;
   }
-#else
-  // Dummy values for testing
-  tempValue = constrain(tempValue + random(-2, 3) / 10.0, -20, 50);
-  humidValue = constrain(humidValue + random(-5, 6) / 10.0, 0, 100);
-  pressureValue = constrain(pressureValue + random(-1, 2), 900, 1100);
-  gasValue = constrain(gasValue + random(-2, 3), 0, 1000);
-  distanceValue = constrain(distanceValue + random(-5, 6), 0, 1000);
-  ambientValue = max(0.0f, ambientValue + random(-10, 11));
-  whiteValue = max(0.0f, whiteValue + random(-10, 11));
-  uvValue = max(0.0f, uvValue + random(-1, 2) / 20.0f);
-  uvIndexValue = max(0.0f, uvIndexValue + random(-1, 2) / 20.0f);
-#endif
 
-  // --- Nur alle 5 Minuten neuen Punkt in History speichern ---
+  ///< Save every HISTORY_UPDATE_INTERVAL points to history buffers
   if (doHistoryUpdate) {
     updateHistory(0, tempValue);
     updateHistory(1, humidValue);
@@ -236,8 +209,7 @@ void updateValue(int i) {
   float newVal = *(boxes[i].value);
 
   ///< Only update if value changed significantly
-  if (abs(newVal - lastValues[i]) < 0.001)
-    return;
+  if (abs(newVal - lastValues[i]) < 0.001) return;
   lastValues[i] = newVal;
 
   ///< Prepare value string
@@ -294,14 +266,14 @@ void drawDetailPage(int boxIndex) {
   String valueStr = String(*boxes[boxIndex].value, boxes[boxIndex].decimals) + " " + boxes[boxIndex].unit;
 
   ///< Draw title and value
-  tft.drawString(title, SCREEN_W / 2, SCREEN_H / 2 - 40, 1);
+  tft.drawString(title, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 40, 1);
   tft.setFreeFont(&FreeSansBold12pt7b);
-  tft.drawString(valueStr, SCREEN_W / 2, SCREEN_H / 2 + 20, 1);
+  tft.drawString(valueStr, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 20, 1);
 
   ///< Hint text
   tft.setFreeFont(&FreeSans9pt7b);
   tft.setTextColor(TFT_DARKGREY, COLOR_BACKGROUND);
-  tft.drawString("Tippen, um zur Hauptseite zu gelangen", SCREEN_W / 2, SCREEN_H - 40, 1);
+  tft.drawString("Tippen, um zur Hauptseite zu gelangen", SCREEN_WIDTH / 2, SCREEN_HEIGHT - 40, 1);
 }
 
 /**
@@ -314,15 +286,14 @@ void drawDetailPage(int boxIndex) {
 void drawDetailPageWithSprite(int boxIndex) {
   float currentValue = *boxes[boxIndex].value;
 
-  // Nur neu zeichnen, wenn nötig
-  if (abs(currentValue - lastDetailValue) < 0.001 && !detailGraphNeedsRedraw)
-    return;
+  ///< Only update if value changed significantly
+  if (abs(currentValue - lastDetailValue) < 0.001 && !detailGraphNeedsRedraw) return;
 
   lastDetailValue = currentValue;
 
-  // --- 1. Wert oben darstellen ---
+  ///< Display value
   TFT_eSprite valueSpr = TFT_eSprite(&tft);
-  valueSpr.createSprite(SCREEN_W - 40, 60);  // kompakter Sprite
+  valueSpr.createSprite(SCREEN_WIDTH - 40, 60);
   valueSpr.fillSprite(COLOR_BACKGROUND);
 
   char buf[20];
@@ -332,32 +303,32 @@ void drawDetailPageWithSprite(int boxIndex) {
 
   int valueWidth, unitWidth, totalWidth, startX;
 
-  // Wert zeichnen
+  ///< Draw value
   valueSpr.setTextDatum(MC_DATUM);
   valueSpr.setTextColor(TFT_BLACK, COLOR_BACKGROUND);
   valueSpr.setFreeFont(&FreeSansBold24pt7b);
   valueWidth = valueSpr.textWidth(valuePart);
-  totalWidth = valueWidth + 10;  // Platz für Einheit
-  startX = (SCREEN_W - 40 - totalWidth) / 2;
+  totalWidth = valueWidth + 10;  // 10 pixels spacing
+  startX = (SCREEN_WIDTH - 40 - totalWidth) / 2;
   valueSpr.drawString(valuePart, startX + valueWidth / 2, 28, 1);
 
-  // Einheit zeichnen
+  ///< Draw unit
   valueSpr.setFreeFont(&FreeSansBold12pt7b);
   unitWidth = valueSpr.textWidth(unitPart);
   valueSpr.drawString(unitPart, startX + valueWidth + 15 + unitWidth / 2, 32, 1);
 
-  // Temperatur-Kreis
+  ///< Draw small circle for temperature unit "C"
   if (strcmp(boxes[boxIndex].title, "Temperatur") == 0) {
     valueSpr.drawCircle(startX + valueWidth + 10, 23, 5, TFT_BLACK);
   }
   valueSpr.pushSprite(20, 80);
   valueSpr.deleteSprite();
 
-  if (!detailGraphNeedsRedraw)
-    return;
+  ///< Draw graph if needed
+  if (!detailGraphNeedsRedraw) return;
   detailGraphNeedsRedraw = false;
 
-  // --- 2. Min/Max bestimmen ---
+  ///< Calculate min and max from history
   float minValue = currentValue;
   float maxValue = currentValue;
   for (int i = 0; i < HISTORY_LENGTH; i++) {
@@ -372,18 +343,18 @@ void drawDetailPageWithSprite(int boxIndex) {
     minValue -= 0.05;
   }
 
-  // --- 3. Graph zeichnen ---
-  const int LABEL_HEIGHT = 16;  // Platz für Labels
+  ///< Draw graph using sprite
+  const int LABEL_HEIGHT = 16;
   TFT_eSprite graphSpr = TFT_eSprite(&tft);
   graphSpr.createSprite(GRAPH_WIDTH, GRAPH_HEIGHT);
   graphSpr.fillSprite(COLOR_BACKGROUND);
   graphSpr.setTextColor(TFT_BLACK);
   graphSpr.setFreeFont(&FreeSans9pt7b);
 
-  // Graph-Rahmen
+  ///< Graph outline
   graphSpr.drawRect(0, 0, GRAPH_WIDTH, GRAPH_HEIGHT - 10, TFT_BLACK);
 
-  // Graphlinien
+  ///< Graph line
   int prevX = -1, prevY = -1;
   int oldestIndex = (historyIndex[boxIndex] + 1) % HISTORY_LENGTH;
   for (int i = 0; i < HISTORY_LENGTH; i++) {
@@ -397,28 +368,27 @@ void drawDetailPageWithSprite(int boxIndex) {
     int y = map((long)(val * 100), (long)(minValue * 100), (long)(maxValue * 100), GRAPH_HEIGHT - 11, 1);
     int x = map(i, 0, HISTORY_LENGTH - 1, 1, GRAPH_WIDTH - 2);
 
-    if (prevX != -1)
-      graphSpr.drawLine(prevX, prevY, x, y, GRAPH_COLOR);
+    if (prevX != -1) graphSpr.drawLine(prevX, prevY, x, y, GRAPH_COLOR);
 
     prevX = x;
     prevY = y;
   }
 
-  graphSpr.pushSprite((SCREEN_W - GRAPH_WIDTH) / 2, 150);
+  graphSpr.pushSprite((SCREEN_WIDTH - GRAPH_WIDTH) / 2, 150);
   graphSpr.deleteSprite();
 
-  // Labels unterhalb des Graphen
+  ///< Graph labels
   tft.setTextDatum(BL_DATUM);
   tft.setTextColor(TFT_BLACK);
   tft.setFreeFont(&FreeSans9pt7b);
-  tft.drawString("Letzte 24 Stunden", (SCREEN_W - GRAPH_WIDTH) / 2, 150 + GRAPH_HEIGHT + 8, 1);
+  tft.drawString("Letzte 24 Stunden", (SCREEN_WIDTH - GRAPH_WIDTH) / 2, 150 + GRAPH_HEIGHT + 8, 1);
 
   tft.setTextDatum(BR_DATUM);
-  tft.drawString("Jetzt", (SCREEN_W + GRAPH_WIDTH) / 2, 150 + GRAPH_HEIGHT + 8, 1);
+  tft.drawString("Jetzt", (SCREEN_WIDTH + GRAPH_WIDTH) / 2, 150 + GRAPH_HEIGHT + 8, 1);
 
-  // --- 4. Min/Max Text unten ---
+  ///< Min and Max labels
   TFT_eSprite minMaxSpr = TFT_eSprite(&tft);
-  minMaxSpr.createSprite(SCREEN_W - 40, 30);
+  minMaxSpr.createSprite(SCREEN_WIDTH - 40, 30);
   minMaxSpr.fillSprite(COLOR_BACKGROUND);
   minMaxSpr.setTextDatum(ML_DATUM);
   minMaxSpr.setTextColor(TFT_BLACK, COLOR_BACKGROUND);
@@ -430,7 +400,7 @@ void drawDetailPageWithSprite(int boxIndex) {
 
   minMaxSpr.drawString(minStr, 0, 15, 1);
   minMaxSpr.setTextDatum(MR_DATUM);
-  minMaxSpr.drawString(maxStr, SCREEN_W - 40, 15, 1);
+  minMaxSpr.drawString(maxStr, SCREEN_WIDTH - 40, 15, 1);
 
   minMaxSpr.pushSprite(20, 420);
   minMaxSpr.deleteSprite();
@@ -451,11 +421,11 @@ void drawDetailPageTitle(int boxIndex) {
   tft.setFreeFont(&FreeSansBold18pt7b);
   String title = "Details: " + String(boxes[boxIndex].title);
 
-  tft.drawString(title, SCREEN_W / 2, 40, 1);
+  tft.drawString(title, SCREEN_WIDTH / 2, 40, 1);
 
   tft.setFreeFont(&FreeSans9pt7b);
   tft.setTextColor(TFT_DARKGREY, COLOR_BACKGROUND);
-  tft.drawString("Tippen, um zur Hauptseite zu gelangen", SCREEN_W / 2, SCREEN_H - 20, 1);
+  tft.drawString("Tippen, um zur Hauptseite zu gelangen", SCREEN_WIDTH / 2, SCREEN_HEIGHT - 20, 1);
 }
 
 /**
@@ -464,13 +434,13 @@ void drawDetailPageTitle(int boxIndex) {
  * @param newValue New sensor value to add to history
  */
 void updateHistory(int boxIndex, float newValue) {
-  // Speichere neuen Wert an aktueller Position
+  ///< Save new value in history buffer
   historyBuffers[boxIndex][historyIndex[boxIndex]] = newValue;
 
-  // Index weiterschalten
+  ///< Increment history index with wrap-around
   historyIndex[boxIndex]++;
   if (historyIndex[boxIndex] >= HISTORY_LENGTH) {
-    historyIndex[boxIndex] = 0;  // Ringpuffer
+    historyIndex[boxIndex] = 0;  // Ring buffer
   }
 }
 

@@ -17,19 +17,16 @@
 
 #include <TFT_eSPI.h>
 
-/// Uncomment to use real sensors instead of simulated data
-#define REAL_SENSORS
-
 /// I2C pins for sensor communication
-#define SDA 38 ///< I2C data line
-#define SCL 37 ///< I2C clock line
+#define SDA 38
+#define SCL 37
 
 /// Touchscreen pins
-#define TOUCH_DIN 7   ///< SPI DIN
-#define TOUCH_DOUT 6  ///< SPI DOUT
-#define TOUCH_CS 15   ///< Chip select
-#define TOUCH_CLK 16  ///< SPI clock
-#define TOUCH_IRQ 5   ///< Interrupt pin (not used here)
+#define TOUCH_DIN 7
+#define TOUCH_DOUT 6
+#define TOUCH_CS 15
+#define TOUCH_CLK 16
+#define TOUCH_IRQ 5
 
 /// TFT display pins
 #define TFT_RD 35
@@ -52,8 +49,8 @@
 #define LED_PWM 4
 
 /// Screen dimensions in pixels
-#define SCREEN_W 800 ///< Screen width
-#define SCREEN_H 480 ///< Screen height
+#define SCREEN_WIDTH 800   ///< Screen width
+#define SCREEN_HEIGHT 480  ///< Screen height
 
 /// Layout constants for main screen boxes
 #define MARGIN 20        ///< Margin around the screen
@@ -67,35 +64,35 @@
 #define NUM_BOXES 8      ///< Total number of boxes on main screen
 
 /// Colors for layout
-#define COLOR_BACKGROUND 0xAD55 ///< Light gray background color
-#define BOX_COLOR TFT_WHITE     ///< Box background color
-#define TITLE_COLOR TFT_BLACK   ///< Box title text color
-#define VALUE_COLOR TFT_BLACK   ///< Box value text color
+#define COLOR_BACKGROUND 0xAD55  ///< Light gray background color
+#define BOX_COLOR TFT_WHITE      ///< Box background color
+#define TITLE_COLOR TFT_BLACK    ///< Box title text color
+#define VALUE_COLOR TFT_BLACK    ///< Box value text color
 
 /// Touchscreen calibration values
-#define XMIN 610  ///< Minimum X value from touchscreen
-#define XMAX 3190 ///< Maximum X value
-#define YMIN 1070 ///< Minimum Y value
-#define YMAX 3180 ///< Maximum Y value
+#define XMIN 610   ///< Minimum X value from touchscreen
+#define XMAX 3190  ///< Maximum X value
+#define YMIN 1070  ///< Minimum Y value
+#define YMAX 3180  ///< Maximum Y value
 
 /// BME688 sensor heater settings
-#define HEATER_TEMP 320     ///< Heater temperature in Celsius
-#define HEATER_DURATION 150 ///< Heater duration in milliseconds
+#define HEATER_TEMP 320      ///< Heater temperature in Celsius
+#define HEATER_DURATION 150  ///< Heater duration in milliseconds
 
 /// Proximity sensor threshold for detecting a hand near the display
 #define HAND_NEAR_TRESHOLD 500
 
 /// PWM brightness control for display backlight
-#define MAX_AMBIENT_LIGHT 5000 ///< Maximum ambient light considered
-#define MIN_PWM 50             ///< Minimum PWM value for backlight
-#define MAX_PWM 200            ///< Maximum PWM value for backlight
+#define MAX_AMBIENT_LIGHT 5000  ///< Maximum ambient light considered
+#define MIN_PWM 50              ///< Minimum PWM value for backlight
+#define MAX_PWM 200             ///< Maximum PWM value for backlight
 
 /// Graph display settings
-#define FAST_UPDATE_INTERVAL 500  ///< Fast update interval in milliseconds
-#define HISTORY_UPDATE_INTERVAL 120000 ///< History update interval (2 minutes) in milliseconds
-#define HISTORY_LENGTH 720   ///< 24 hours of data at 2-minute intervals (24h * 60min / 2min)
-#define GRAPH_HEIGHT 210    ///< Height of graph area in pixels
-#define GRAPH_WIDTH 720     ///< Width of graph area in pixels
-#define GRAPH_COLOR TFT_RED ///< Color for graph lines
+#define FAST_UPDATE_INTERVAL 500        ///< Fast update interval in milliseconds
+#define HISTORY_UPDATE_INTERVAL 120000  ///< History update interval (2 minutes) in milliseconds
+#define HISTORY_LENGTH 720              ///< 24 hours of data at 2-minute intervals (24h * 60min / 2min)
+#define GRAPH_HEIGHT 210                ///< Height of graph area in pixels
+#define GRAPH_WIDTH 720                 ///< Width of graph area in pixels
+#define GRAPH_COLOR TFT_RED             ///< Color for graph lines
 
 #endif  // CONFIG_H
